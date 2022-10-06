@@ -29,7 +29,7 @@ Les structure de données `list` et `cell`  vous sont données et permettent de 
 3. Écrire une fonction `print_cell` capable d'afficher le contenu d'une cellule sous la forme `[prénom, nom, code postal]`.
 
 4. Écrire une fonction `print_list` capable d'afficher le contenu d'une liste sous la forme 
-   ````c
+   ````
    {
     [prénom 1, nom 1, code postal 1],
     [prénom 2, ...], 
