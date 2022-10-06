@@ -19,7 +19,7 @@ Un squelette du projet vous est proposé et contient :
 Les structure de données `list` et `cell`  vous sont données et permettent de définir une liste chaînées de personnes à partir de leurs informations : nom, prénom et code postal (ou `fname`, `lname` et `zip`). Un exemple d'utilisation de ces structures de données vous est illustré sur la figure ci-dessous.
 
 <p align="center">
-  <img width=400 src="list.png">
+  <img width=300 src="list.png">
 </p>
 
 1. Écrire une fonction `make_cell` qui crée une cellule à partir des informations de ses champs.
@@ -59,7 +59,7 @@ Il faut maintenant lire les données depuis un fichier et les ajouter dynamiquem
 Pour éviter de devoir traverser toutes les entrées en cas d'ajout d'une nouvelle, nous décidons de rajouter la première lettre de chaque nom comme caractère discriminant. Nous allons maintenant utiliser une liste chaînée de liste chaînées, la première représentant les premières lettres des noms de famille, pour accélérer l'accès aux données et l'ajout d'une nouvelle donnée. Un exemple d'utilisation est présentée sur la figure ci-dessous.
 
 <p align="center">
-  <img width=400 src="llist.png">
+  <img width=700 src="llist.png">
 </p>
 
 
