@@ -9,6 +9,7 @@ Un squelette du projet vous est proposé et contient :
 - une structure de projet C à respecter avec son `makefile` dédié
 - `list.h`, le header contenant la première structure ainsi que les signatures des fonctions à créer
 - `list.c`, le fichier à compléter avec vos fonctions
+- `llist.c` et `llist.h` les équivalents pour la structure optimisée
 - `main.c`, le fichier qui permet de s'interfacer avec vos fonctions (et d'y écrire vos tests !)
 - `data`, le dossier dans lequel plusieurs bases de données vous sont proposées, à noter que nous testerons votre projet avec des bases de données différentes mais équivalentes
 
