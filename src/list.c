@@ -47,12 +47,17 @@ void free_list(struct list* lst) {
 
 void print_cell(struct cell* c) {
 	/* Your code here */
-	printf("[%s,%s,%s]");
+	printf("[%s,%s,%s]\n",c->fname,c->lname,c->zip);
 }
 
 void print_list(struct list *lst) {
 	/* Your code here */
-
+	struct cell* pCell;
+	pCell=lst->head;
+	while (pCell != NULL){
+		print_cell(pCell);
+		pCell=pCell->next;
+	}
 }
 
 /* Cell addition
@@ -60,8 +65,16 @@ void print_list(struct list *lst) {
 
 struct cell* make_cell(char* fname, char* lname, char* zip) {
 	/* Your code here */
+	struct cell* one_cell;
+	one_cell=malloc(sizeof(struct cell));
+	one_cell->fname=fname;
+	one_cell->lname=lname;
+	one_cell->zip=zip;
+	return one_cell;
 }
 
 void push(struct list *lst, struct cell* c) {
 	/* Your code here */
+	c->next=lst->head;
+	lst->head=c;	
 }
