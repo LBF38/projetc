@@ -47,17 +47,21 @@ void free_list(struct list* lst) {
 
 void print_cell(struct cell* c) {
 	/* Your code here */
-	printf("[%s,%s,%s]\n",c->fname,c->lname,c->zip);
+	printf("[%s,%s,%s]",c->fname,c->lname,c->zip);
 }
 
 void print_list(struct list *lst) {
 	/* Your code here */
 	struct cell* pCell;
 	pCell=lst->head;
+	printf("{\n");
 	while (pCell != NULL){
+		printf("   "); // une tabulation pour afficher joliment la liste et son contenu.
 		print_cell(pCell);
+		printf(",\n");
 		pCell=pCell->next;
 	}
+	printf("}\n");
 }
 
 /* Cell addition
