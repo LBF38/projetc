@@ -91,15 +91,13 @@ void push(struct list *lst, struct cell* c) {
 }
 
 void pop(struct list* lst, struct cell* out){	
-	struct cell *pCell;
-	pCell = lst->head;
-	lst->head=pCell->next;
-	//TODO compléter code
-	copy_cell(out,pCell);
-	free(pCell);
+	out = lst->head; // on récupère la première cellule
+	lst->head=out->next; // on change la tête de la liste pour la cellule
+	out->next=NULL; // on enlève tout lien entre la cellule out et la liste lst
 }
 
 
-// struct cell* make_cell_from_line(char* line){
-	
-// }
+struct cell* make_cell_from_line(char* line){
+	// ref pour le strtok : https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
+
+}

@@ -12,20 +12,23 @@ int main(int argc, char *argv[])
     c = make_cell("Annie", "ERNAUX", "76170");
 
     push(l, c);
+    push(l, c);
 
-    print("List status\n");
+    printf("List status\n");
     print_list(l);
 
     struct cell *out;
     out=malloc(sizeof(struct cell));
     pop(l,out);
+    pop(l,out);
 
-    print("out cell content : \n");
+    printf("out cell content : \n");
     print_cell(out);
 
-    print("List status\n");
+    printf("List status\n");
     print_list(l);
 
     free_list(l);
+    free(out);
     return 0;
 }
