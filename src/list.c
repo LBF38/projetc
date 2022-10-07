@@ -74,7 +74,14 @@ struct cell* make_cell(char* fname, char* lname, char* zip) {
 	one_cell->fname=fname;
 	one_cell->lname=lname;
 	one_cell->zip=zip;
+	one_cell->next=NULL;
 	return one_cell;
+}
+
+void copy_cell(struct cell* copy_of, struct cell* to_copy){
+	copy_of->fname=to_copy->fname;
+	copy_of->lname=to_copy->lname;
+	copy_of->zip=to_copy->zip;
 }
 
 void push(struct list *lst, struct cell* c) {
@@ -82,3 +89,17 @@ void push(struct list *lst, struct cell* c) {
 	c->next=lst->head;
 	lst->head=c;	
 }
+
+void pop(struct list* lst, struct cell* out){	
+	struct cell *pCell;
+	pCell = lst->head;
+	lst->head=pCell->next;
+	//TODO compléter code
+	copy_cell(out,pCell);
+	free(pCell);
+}
+
+
+// struct cell* make_cell_from_line(char* line){
+	
+// }
