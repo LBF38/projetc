@@ -14,6 +14,7 @@ struct list* new_list() {
 	return lst;
 }
 
+
 static void free_cells(struct list *lst) {
 	struct cell *cur;
 	struct cell *tmp;
@@ -46,10 +47,12 @@ void free_list(struct list* lst) {
 
 void print_cell(struct cell* c) {
 	/* Your code here */
+	printf("[%s,%s,%s]");
 }
 
 void print_list(struct list *lst) {
 	/* Your code here */
+
 }
 
 /* Cell addition
