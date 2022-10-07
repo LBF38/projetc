@@ -91,13 +91,23 @@ void push(struct list *lst, struct cell* c) {
 }
 
 void pop(struct list* lst, struct cell* out){	
-	out = lst->head; // on récupère la première cellule
-	lst->head=out->next; // on change la tête de la liste pour la cellule
-	out->next=NULL; // on enlève tout lien entre la cellule out et la liste lst
+	memcpy(out,lst->head,sizeof(struct cell));
+	free(lst->head);
+	lst->head=out->next;
+	out->next=NULL;
 }
 
 
 struct cell* make_cell_from_line(char* line){
 	// ref pour le strtok : https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
-
+	struct cell* pCell;
+	char* token;
+	char delim;
+	delim=",";
+	token=strtok(line,delim);
+	while (token != NULL){
+		printf("%s\n",token);
+		token=strtok(NULL,delim);
+	}
+	return pCell;
 }

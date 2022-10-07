@@ -10,7 +10,9 @@ In this one, we have the function `strtok`
 ## Function pop
 
 We want to make a function that pops the first element of the list.
-On peut soit
+On utilise pop pour copier les infos du premier élément vers le paramètre de sortie de la fonction.
+On alloue la mémoire de notre paramètre de sortie en dehors de la fonction.
+Ensuite, on libère la mémoire de l'élément qui est enlevé après avoir changé la tête de la liste pour le second élément.
 
 ## Remarques
 
