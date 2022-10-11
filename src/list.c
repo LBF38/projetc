@@ -106,7 +106,7 @@ struct cell *make_cell_from_line(char *line)
 {
 	// ref pour le strtok : https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
 	struct cell *pCell;
-	pCell=malloc(sizeof(struct cell));
+	pCell = malloc(sizeof(struct cell));
 	char *token;
 	char *delim;
 	delim = ",";
@@ -131,33 +131,43 @@ struct cell *make_cell_from_line(char *line)
 			break;
 		}
 		token = strtok(NULL, delim);
-		// TODO: ajouter à pCell les infos au bon endroit
 	}
 	return pCell;
 }
 
-// struct list *load_file(char *file_name)
-// {
-// 	struct list *data;
-// 	struct cell *pCell;
+struct list *load_file(char *file_name)
+{
+	struct list *data;
+	data = malloc(sizeof(struct list));
+	struct cell *cellule;
+	char *lines;
+	lines = malloc(100 * sizeof(char));
+	//TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
+	
+	FILE *inputFile = fopen(file_name, "r");
+	// Gestion erreur ouverture fichier
+	if (inputFile == NULL)
+	{
+		fprintf(stderr, "error opening file : %s\n", strerror(errno));
+		exit(-1);
+	}
+	printf("%s", lines);
+	fread(lines, sizeof(inputFile), 1, inputFile);
+	fclose(inputFile);
+	printf("these are lines : %s", lines);
 
-// 	FILE *inputFile = fopen(file_name, "r");
-// 	// Gestion erreur ouverture fichier
-// 	if (inputFile == NULL)
-// 	{
-// 		fprintf(stderr, "error opening file : %s\n", strerror(errno));
-// 		exit(-1);
-// 	}
-// 	char *token;
-// 	char *delim;
-// 	delim = "\n";
-// 	token = strtok(inputFile, delim);
-// 	while (token != NULL)
-// 	{
-// 		pCell = make_cell_from_line(token);
-// 		printf("lecture fichier : ");
-// 		printf("%s\n", token);
-// 		token = strtok(NULL, delim);
-// 		// TODO: stocker les infos ligne par ligne.
-// 	}
-// }
+	char *token;
+	char *delim;
+	delim = "\n";
+	token = strtok(lines, delim);
+	while (token != NULL)
+	{
+		cellule = make_cell_from_line(token);
+		push(data, cellule);
+		printf("lecture fichier : ");
+		printf("%s\n", token);
+		token = strtok(NULL, delim);
+		// TODO: stocker les infos ligne par ligne.
+	}
+	return data;
+}
