@@ -28,5 +28,9 @@ int main(int argc, char *argv[])
 
     free_list(l);
     free(out);
+
+    // Tests sur partie 2 :
+    char str[50] = "this,is,a,test\nand,a,another\none";
+    print_cell(make_cell_from_line(str));
     return 0;
 }
