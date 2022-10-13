@@ -89,8 +89,11 @@ struct cell *make_cell(char *fname, char *lname, char *zip)
 
 void push(struct list *lst, struct cell *c)
 {
-	c->next = lst->head;
-	lst->head = c;
+	struct cell *cell_copy;
+	cell_copy=malloc(sizeof(struct cell));
+	memcpy(cell_copy,c,sizeof(struct cell));
+	cell_copy->next = lst->head;
+	lst->head = cell_copy;
 }
 
 void pop(struct list *lst, struct cell *out)
@@ -172,7 +175,7 @@ struct list *load_file(char *file_name)
 		printf("Adresse de la cellule : %p - contenu : ",cellule);
 		print_cell(cellule); // cellule propre.
 		printf("\n");
-		push(data, make_cell_from_line(token)); // FIXME : problème sur le push
+		push(data, make_cell_from_line(token)); // FIXME #3 : problème sur le push
 		printf("Push cellule : ");
 		print_cell(data->head);
 		printf("\nEtat de la liste");
