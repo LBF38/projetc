@@ -38,10 +38,11 @@ int main(int argc, char *argv[])
     // free(out);
 
     // Tests sur partie 2 :
+
     // char str[50] = "this,is,a,test\nand,a,another\none";
     // print_cell(make_cell_from_line(str));
 
-    char file[50]="/home/mathis/projetc/projetc/data/small.txt";
+    char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
     struct list *lst;
     lst = load_file(file);
     print_list(lst);

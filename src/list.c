@@ -107,12 +107,14 @@ void pop(struct list *lst, struct cell *out)
 struct cell *make_cell_from_line(char *line)
 {
 	// ref pour le strtok : https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
+	printf("Début make_cell_from_line :\n");
 	struct cell *pCell;
 	pCell = malloc(sizeof(struct cell));
 	char *token;
 	char *delim;
 	delim = ",";
 	token = strtok(line, delim);
+	printf("token init : %s\t", token);
 	int i = 0;
 	while (token != NULL)
 	{
@@ -133,7 +135,11 @@ struct cell *make_cell_from_line(char *line)
 			break;
 		}
 		token = strtok(NULL, delim);
+		printf("Etat du token : %s\t", token);
 	}
+	printf("cellule : ");
+	print_cell(pCell);
+	printf("\n");
 	return pCell;
 }
 
@@ -159,11 +165,14 @@ struct list *load_file(char *file_name)
 		exit(-1);
 	}
 
-	cellule = make_cell("test","TEST","1234");
+	// cellule = make_cell("test","TEST","1234");
+	// char test[]= "test,TEST,1234";
+	// cellule = make_cell_from_line(test);
 	printf("Début de la lecture du film\n");
-	while (fgets(entry, 100, inputFile) != NULL & i < 10)
+	while ((fgets(entry, 100, inputFile) != NULL) & (i < 10))
 	{
 		printf("%d : ", i++);
+		// printf("ligne brute : %s ",entry);
 		// strncpy(line, entry, taille_line - 2);
 		delim = ";";
 		token = strtok(entry, delim);
@@ -171,9 +180,10 @@ struct list *load_file(char *file_name)
 		printf("%ld  ", taille_line);
 		printf(token);
 		printf("\n");
+		cellule = make_cell("test", "TEST", "1234");
 		// cellule = make_cell_from_line(token);
 		printf("Adresse de la cellule : %p - contenu : ", cellule);
-		// print_cell(cellule); // cellule propre.
+		print_cell(cellule); // cellule propre.
 		printf("\n");
 		push(data, cellule); // FIXME #3 : problème sur le push
 		printf("Pushed cellule : adresse %p - contenu : ", data->head);
@@ -181,7 +191,6 @@ struct list *load_file(char *file_name)
 		// printf("\nEtat de la liste :\n");
 		// print_list(data);
 		printf("\n");
-		// free(cellule);
 	}
 	// print_cell(cellule);
 	fclose(inputFile);
