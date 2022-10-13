@@ -4,35 +4,42 @@
 
 int main(int argc, char *argv[])
 {
-    struct list *l;
-    l = new_list();
-    print_list(l);
+    // Test Partie 1:
 
-    struct cell *c;
-    c = make_cell("Annie", "ERNAUX", "76170");
+    // struct list *l;
+    // l = new_list();
+    // print_list(l);
 
-    push(l, c);
+    // struct cell *c;
+    // c = make_cell("Annie", "ERNAUX", "76170");
 
-    printf("List status\n");
-    print_list(l);
+    // push(l, c);
 
-    struct cell *out;
-    out=malloc(sizeof(struct cell));
-    pop(l,out);
+    // printf("List status\n");
+    // print_list(l);
 
-    printf("out cell content : \n");
-    print_cell(out);
+    // struct cell *out;
+    // out=malloc(sizeof(struct cell));
+    // pop(l,out);
 
-    printf("List status\n");
-    print_list(l);
+    // printf("out cell content : \n");
+    // print_cell(out);
 
-    free_list(l);
-    free(out);
+    // printf("List status\n");
+    // print_list(l);
+
+    // free_list(l);
+    // free(out);
 
     // Tests sur partie 2 :
     char str[50] = "this,is,a,test\nand,a,another\none";
     print_cell(make_cell_from_line(str));
+
     char file[50]="/home/mathis/projetc/projetc/data/small.txt";
-    print_list(load_file(file));
+    struct list *lst;
+    lst = load_file(file);
+    print_list(lst);
+    print_cell(lst->head);
+    free_list(lst);
     return 0;
 }

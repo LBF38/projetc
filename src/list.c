@@ -137,14 +137,17 @@ struct cell *make_cell_from_line(char *line)
 struct list *load_file(char *file_name)
 {
 	struct list *data;
-	data = malloc(sizeof(struct list));
+	data = new_list();
 	struct cell *cellule;
-	char *line;
+	cellule = malloc(sizeof(struct cell));
+	// char *line;
 	char *entry;
-	line = malloc(100 * sizeof(char));
+	// line = malloc(100 * sizeof(char));
 	entry = malloc(100 * sizeof(char));
 	int i = 0;
 	size_t taille_line;
+	char *token;
+	char *delim;
 	// TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
 
 	FILE *inputFile = fopen(file_name, "r");
@@ -155,29 +158,30 @@ struct list *load_file(char *file_name)
 		exit(-1);
 	}
 	printf("Début de la lecture du film\n");
-	while (fgets(entry, 50, inputFile) != NULL)
+	while (fgets(entry, 100, inputFile) != NULL)
 	{
 		printf("%d : ", i++);
-		taille_line = strlen(entry);
-		strncpy(line,entry,taille_line-2);
-		printf("%ld  ",taille_line);
-		printf(line);
-		// printf("\n");
-		// cellule = make_cell(NULL,NULL,NULL);
-		cellule = make_cell_from_line(line);
-		push(data, cellule);
-		// free(cellule);
+		// strncpy(line, entry, taille_line - 2);
+		delim = ";";
+		token = strtok(entry, delim);
+		taille_line = strlen(token);
+		printf("%ld  ", taille_line);
+		printf(token);
+		printf("\n");
+		cellule =make_cell_from_line(token);
+		printf("Adresse de la cellule : %p - contenu : ",cellule);
+		print_cell(cellule); // cellule propre.
+		printf("\n");
+		push(data, make_cell_from_line(token)); // FIXME : problème sur le push
+		printf("Push cellule : ");
+		print_cell(data->head);
+		printf("\nEtat de la liste");
+		print_list(data);
+		printf("\n");
 	}
 	// print_cell(cellule);
-	// printf("%s", lines);
-	// fread(lines, sizeof(inputFile), 1, inputFile);
 	fclose(inputFile);
 	// printf("these are lines : %s", lines);
-
-	// char *token;
-	// char *delim;
-	// delim = "\n";
-	// token = strtok(lines, delim);
 	// while (token != NULL)
 	// {
 	// 	cellule = make_cell_from_line(token);
@@ -185,7 +189,6 @@ struct list *load_file(char *file_name)
 	// 	printf("lecture fichier : ");
 	// 	printf("%s\n", token);
 	// 	token = strtok(NULL, delim);
-	// 	// TODO: stocker les infos ligne par ligne.
 	// }
 	return data;
 }
