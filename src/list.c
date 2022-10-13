@@ -90,8 +90,8 @@ struct cell *make_cell(char *fname, char *lname, char *zip)
 void push(struct list *lst, struct cell *c)
 {
 	struct cell *cell_copy;
-	cell_copy=malloc(sizeof(struct cell));
-	memcpy(cell_copy,c,sizeof(struct cell));
+	cell_copy = malloc(sizeof(struct cell));
+	memcpy(cell_copy, c, sizeof(struct cell));
 	cell_copy->next = lst->head;
 	lst->head = cell_copy;
 }
@@ -142,10 +142,8 @@ struct list *load_file(char *file_name)
 	struct list *data;
 	data = new_list();
 	struct cell *cellule;
-	cellule = malloc(sizeof(struct cell));
-	// char *line;
+	// cellule = malloc(sizeof(struct cell));
 	char *entry;
-	// line = malloc(100 * sizeof(char));
 	entry = malloc(100 * sizeof(char));
 	int i = 0;
 	size_t taille_line;
@@ -160,8 +158,10 @@ struct list *load_file(char *file_name)
 		fprintf(stderr, "error opening file : %s\n", strerror(errno));
 		exit(-1);
 	}
+
+	cellule = make_cell("test","TEST","1234");
 	printf("Début de la lecture du film\n");
-	while (fgets(entry, 100, inputFile) != NULL)
+	while (fgets(entry, 100, inputFile) != NULL & i < 10)
 	{
 		printf("%d : ", i++);
 		// strncpy(line, entry, taille_line - 2);
@@ -171,16 +171,17 @@ struct list *load_file(char *file_name)
 		printf("%ld  ", taille_line);
 		printf(token);
 		printf("\n");
-		cellule =make_cell_from_line(token);
-		printf("Adresse de la cellule : %p - contenu : ",cellule);
-		print_cell(cellule); // cellule propre.
+		// cellule = make_cell_from_line(token);
+		printf("Adresse de la cellule : %p - contenu : ", cellule);
+		// print_cell(cellule); // cellule propre.
 		printf("\n");
-		push(data, make_cell_from_line(token)); // FIXME #3 : problème sur le push
-		printf("Push cellule : ");
+		push(data, cellule); // FIXME #3 : problème sur le push
+		printf("Pushed cellule : adresse %p - contenu : ", data->head);
 		print_cell(data->head);
-		printf("\nEtat de la liste");
-		print_list(data);
+		// printf("\nEtat de la liste :\n");
+		// print_list(data);
 		printf("\n");
+		// free(cellule);
 	}
 	// print_cell(cellule);
 	fclose(inputFile);
@@ -193,5 +194,7 @@ struct list *load_file(char *file_name)
 	// 	printf("%s\n", token);
 	// 	token = strtok(NULL, delim);
 	// }
+	free(cellule);
+	free(entry);
 	return data;
 }
