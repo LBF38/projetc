@@ -89,7 +89,6 @@ struct cell *make_cell(char *fname, char *lname, char *zip)
 
 void push(struct list *lst, struct cell *c)
 {
-	/* Your code here */
 	c->next = lst->head;
 	lst->head = c;
 }
@@ -140,10 +139,14 @@ struct list *load_file(char *file_name)
 	struct list *data;
 	data = malloc(sizeof(struct list));
 	struct cell *cellule;
-	char *lines;
-	lines = malloc(100 * sizeof(char));
-	//TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
-	
+	char *line;
+	char *entry;
+	line = malloc(100 * sizeof(char));
+	entry = malloc(100 * sizeof(char));
+	int i = 0;
+	size_t taille_line;
+	// TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
+
 	FILE *inputFile = fopen(file_name, "r");
 	// Gestion erreur ouverture fichier
 	if (inputFile == NULL)
@@ -151,23 +154,38 @@ struct list *load_file(char *file_name)
 		fprintf(stderr, "error opening file : %s\n", strerror(errno));
 		exit(-1);
 	}
-	printf("%s", lines);
-	fread(lines, sizeof(inputFile), 1, inputFile);
-	fclose(inputFile);
-	printf("these are lines : %s", lines);
-
-	char *token;
-	char *delim;
-	delim = "\n";
-	token = strtok(lines, delim);
-	while (token != NULL)
+	printf("Début de la lecture du film\n");
+	while (fgets(entry, 50, inputFile) != NULL)
 	{
-		cellule = make_cell_from_line(token);
+		printf("%d : ", i++);
+		taille_line = strlen(entry);
+		strncpy(line,entry,taille_line-2);
+		printf("%ld  ",taille_line);
+		printf(line);
+		// printf("\n");
+		// cellule = make_cell(NULL,NULL,NULL);
+		cellule = make_cell_from_line(line);
 		push(data, cellule);
-		printf("lecture fichier : ");
-		printf("%s\n", token);
-		token = strtok(NULL, delim);
-		// TODO: stocker les infos ligne par ligne.
+		// free(cellule);
 	}
+	// print_cell(cellule);
+	// printf("%s", lines);
+	// fread(lines, sizeof(inputFile), 1, inputFile);
+	fclose(inputFile);
+	// printf("these are lines : %s", lines);
+
+	// char *token;
+	// char *delim;
+	// delim = "\n";
+	// token = strtok(lines, delim);
+	// while (token != NULL)
+	// {
+	// 	cellule = make_cell_from_line(token);
+	// 	push(data, cellule);
+	// 	printf("lecture fichier : ");
+	// 	printf("%s\n", token);
+	// 	token = strtok(NULL, delim);
+	// 	// TODO: stocker les infos ligne par ligne.
+	// }
 	return data;
 }
