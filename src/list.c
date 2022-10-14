@@ -33,7 +33,7 @@ static void free_cells(struct list *lst)
 		tmp = cur;
 		cur = cur->next;
 		// If dynamically allocated!
-		// free(tmp->fname);
+		free(tmp->fname);
 		// free(tmp->lname);
 		// free(tmp->zip);
 		free(tmp);
@@ -94,6 +94,7 @@ void push(struct list *lst, struct cell *c)
 	memcpy(cell_copy, c, sizeof(struct cell));
 	cell_copy->next = lst->head;
 	lst->head = cell_copy;
+	free(c);
 }
 
 void pop(struct list *lst, struct cell *out)
@@ -106,41 +107,18 @@ void pop(struct list *lst, struct cell *out)
 
 struct cell *make_cell_from_line(char *line)
 {
-	// ref pour le strtok : https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm
 	printf("Début make_cell_from_line :\n");
-	struct cell *pCell;
-	pCell = malloc(sizeof(struct cell));
-	char *token;
-	char *delim;
-	delim = ",";
-	token = strtok(line, delim);
-	printf("token init : %s\t", token);
-	int i = 0;
-	while (token != NULL)
-	{
-		// printf("token %d: ", i);
-		// printf("%s\n", token);
-		switch (i++)
-		{
-		case 0:
-			pCell->fname = token;
-			break;
-		case 1:
-			pCell->lname = token;
-			break;
-		case 2:
-			pCell->zip = token;
-			break;
-		default:
-			break;
-		}
-		token = strtok(NULL, delim);
-		printf("Etat du token : %s\t", token);
-	}
-	printf("cellule : ");
-	print_cell(pCell);
-	printf("\n");
-	return pCell;
+	char *fname;
+	char *lname;
+	char *zip;
+	char *separator;
+	char *string = (char *)malloc((strlen(line) + 1) * sizeof(char));
+	strcpy(string,line);
+	separator = ",;"; // permet de séparer par rapport à tous les caractères fournis
+	fname = strtok(string, separator);
+	lname = strtok(NULL, separator);
+	zip = strtok(NULL, separator);
+	return make_cell(fname, lname, zip);
 }
 
 struct list *load_file(char *file_name)
@@ -148,13 +126,9 @@ struct list *load_file(char *file_name)
 	struct list *data;
 	data = new_list();
 	struct cell *cellule;
-	// cellule = malloc(sizeof(struct cell));
 	char *entry;
 	entry = malloc(100 * sizeof(char));
 	int i = 0;
-	size_t taille_line;
-	char *token;
-	char *delim;
 	// TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
 
 	FILE *inputFile = fopen(file_name, "r");
@@ -165,45 +139,21 @@ struct list *load_file(char *file_name)
 		exit(-1);
 	}
 
-	// cellule = make_cell("test","TEST","1234");
-	// char test[]= "test,TEST,1234";
-	// cellule = make_cell_from_line(test);
 	printf("Début de la lecture du film\n");
 	while ((fgets(entry, 100, inputFile) != NULL) & (i < 10))
 	{
 		printf("%d : ", i++);
-		// printf("ligne brute : %s ",entry);
-		// strncpy(line, entry, taille_line - 2);
-		delim = ";";
-		token = strtok(entry, delim);
-		taille_line = strlen(token);
-		printf("%ld  ", taille_line);
-		printf(token);
-		printf("\n");
-		cellule = make_cell("test", "TEST", "1234");
-		// cellule = make_cell_from_line(token);
+		cellule = make_cell_from_line(entry);
 		printf("Adresse de la cellule : %p - contenu : ", cellule);
 		print_cell(cellule); // cellule propre.
 		printf("\n");
 		push(data, cellule); // FIXME #3 : problème sur le push
 		printf("Pushed cellule : adresse %p - contenu : ", data->head);
 		print_cell(data->head);
-		// printf("\nEtat de la liste :\n");
-		// print_list(data);
 		printf("\n");
 	}
-	// print_cell(cellule);
 	fclose(inputFile);
-	// printf("these are lines : %s", lines);
-	// while (token != NULL)
-	// {
-	// 	cellule = make_cell_from_line(token);
-	// 	push(data, cellule);
-	// 	printf("lecture fichier : ");
-	// 	printf("%s\n", token);
-	// 	token = strtok(NULL, delim);
-	// }
-	free(cellule);
+
 	free(entry);
 	return data;
 }
