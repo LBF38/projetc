@@ -147,3 +147,15 @@ struct list *load_file(char *file_name)
 	free(entry);
 	return data;
 }
+
+int compare_cells(struct cell* a, struct cell* b){
+	int	compare = strcmp(a->lname,b->lname);
+	if (compare!=0){
+		return compare;
+	}
+	compare = strcmp(a->fname,b->fname);
+	return compare;
+}
+
+
+
