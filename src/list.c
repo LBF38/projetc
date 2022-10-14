@@ -107,7 +107,6 @@ void pop(struct list *lst, struct cell *out)
 
 struct cell *make_cell_from_line(char *line)
 {
-	printf("Début make_cell_from_line :\n");
 	char *fname;
 	char *lname;
 	char *zip;
@@ -128,7 +127,6 @@ struct list *load_file(char *file_name)
 	struct cell *cellule;
 	char *entry;
 	entry = malloc(100 * sizeof(char));
-	int i = 0;
 	// TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
 
 	FILE *inputFile = fopen(file_name, "r");
@@ -139,18 +137,10 @@ struct list *load_file(char *file_name)
 		exit(-1);
 	}
 
-	printf("Début de la lecture du film\n");
-	while ((fgets(entry, 100, inputFile) != NULL) & (i < 10))
+	while (fgets(entry, 100, inputFile) != NULL)
 	{
-		printf("%d : ", i++);
 		cellule = make_cell_from_line(entry);
-		printf("Adresse de la cellule : %p - contenu : ", cellule);
-		print_cell(cellule); // cellule propre.
-		printf("\n");
 		push(data, cellule); // FIXME #3 : problème sur le push
-		printf("Pushed cellule : adresse %p - contenu : ", data->head);
-		print_cell(data->head);
-		printf("\n");
 	}
 	fclose(inputFile);
 
