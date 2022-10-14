@@ -39,22 +39,40 @@ int main(int argc, char *argv[])
 
     // Tests sur partie 2 :
 
-    // Test sur compare_cells 
-    struct cell* c1;
-    struct cell* c2;
-    struct cell* c3;
-    c1=make_cell("abc","abc","123");
-    c2=make_cell("abc","bcd","123");
-    c3=make_cell("bcd","bcd","123");
-    printf("%d\n",compare_cells(c1,c2)); // résultat attendu : -1
-    printf("%d\n",compare_cells(c2,c1)); //résultat attendu : 1
-    printf("%d\n",compare_cells(c2,c3)); //résultat attendu : -1
+    // Test sur compare_cells :
+    // struct cell* c1;
+    // struct cell* c2;
+    // struct cell* c3;
+    // c1=make_cell("a","a","123");
+    // c2=make_cell("a","b","123");
+    // c3=make_cell("b","b","123");
+    // printf("%d\n",compare_cells(c1,c2)); // résultat attendu : -1 correct!
+    // printf("%d\n",compare_cells(c2,c1)); // résultat attendu :  1 correct!
+    // printf("%d\n",compare_cells(c2,c3)); // résultat attendu : -1 correct!
 
-    // char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
+    // Test sur insert:
     // struct list *lst;
-    // lst = load_file(file);
+    // lst=new_list();
+    // struct cell* c1;
+    // struct cell* c2;
+    // struct cell* c3;
+    // c1=make_cell("a","a","123");
+    // c2=make_cell("a","b","123");
+    // c3=make_cell("b","b","123");
     // print_list(lst);
-    // // print_cell(lst->head);
+    // insert(lst,c2);
+    // print_list(lst);
+    // insert(lst,c1);
+    // print_list(lst);
+    // insert(lst,c3);
+    // print_list(lst);
     // free_list(lst);
+
+    char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
+    struct list *lst;
+    lst = load_file(file);
+    print_list(lst);
+    // print_cell(lst->head);
+    free_list(lst);
     return 0;
 }

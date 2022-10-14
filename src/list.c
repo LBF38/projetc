@@ -112,7 +112,7 @@ struct cell *make_cell_from_line(char *line)
 	char *zip;
 	char *separator;
 	char *string = (char *)malloc((strlen(line) + 1) * sizeof(char));
-	strcpy(string,line);
+	strcpy(string, line);
 	separator = ",;"; // permet de séparer par rapport à tous les caractères fournis
 	fname = strtok(string, separator);
 	lname = strtok(NULL, separator);
@@ -127,7 +127,6 @@ struct list *load_file(char *file_name)
 	struct cell *cellule;
 	char *entry;
 	entry = malloc(100 * sizeof(char));
-	// TODO : améliorer la lecture du fichier et le stocker dans une seule var (lines).
 
 	FILE *inputFile = fopen(file_name, "r");
 	// Gestion erreur ouverture fichier
@@ -140,7 +139,7 @@ struct list *load_file(char *file_name)
 	while (fgets(entry, 100, inputFile) != NULL)
 	{
 		cellule = make_cell_from_line(entry);
-		push(data, cellule); // FIXME #3 : problème sur le push
+		insert(data, cellule);
 	}
 	fclose(inputFile);
 
@@ -148,14 +147,48 @@ struct list *load_file(char *file_name)
 	return data;
 }
 
-int compare_cells(struct cell* a, struct cell* b){
-	int	compare = strcmp(a->lname,b->lname);
-	if (compare!=0){
+int compare_cells(struct cell *a, struct cell *b)
+{
+	int compare = strcmp(a->lname, b->lname);
+	if (compare != 0)
+	{
 		return compare;
 	}
-	compare = strcmp(a->fname,b->fname);
+	compare = strcmp(a->fname, b->fname);
 	return compare;
 }
 
+void insert(struct list *lst, struct cell *c)
+{
+	struct cell *current_cell;
+	// CAS 1: la liste est vide
+	if (lst->head == NULL)
+	{
+		push(lst, c);
+		return;
+	}
+	// CAS 2 : insertion en début de liste
+	if (compare_cells(lst->head, c) > 0)
+	{
+		c->next = lst->head;
+		lst->head = c;
+		return;
+	}
 
-
+	// CAS 3: on insère au milieu de la liste (entre 2 élts)
+	current_cell = lst->head;
+	while (current_cell->next != NULL)
+	{
+		if(compare_cells(current_cell->next,c)>0)
+		{
+			c->next = current_cell->next;
+			current_cell->next = c;
+			return;
+		}
+		current_cell = current_cell->next;
+	}
+	// CAS 4: on insère à la fin de la liste
+	current_cell->next=c;
+	c->next=NULL;
+	return;
+}
