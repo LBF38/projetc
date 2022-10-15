@@ -4,5 +4,6 @@
         "list.c": "c",
         "llist.h": "c",
         "llist.c": "c"
-    }
+    },
+    "C_Cpp.intelliSenseEngineFallback": "Enabled"
 }

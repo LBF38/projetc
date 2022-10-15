@@ -1,6 +1,6 @@
 #include <time.h>
 
-#include "list.h"
+#include "llist.h"
 
 int main(int argc, char *argv[])
 {
@@ -68,11 +68,23 @@ int main(int argc, char *argv[])
     // print_list(lst);
     // free_list(lst);
 
-    char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
-    struct list *lst;
-    lst = load_file(file);
-    print_list(lst);
-    // print_cell(lst->head);
-    free_list(lst);
+    // char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
+    // struct list *lst;
+    // lst = load_file(file);
+    // print_list(lst);
+    // // print_cell(lst->head);
+    // free_list(lst);
+
+    // Test sur partie 3 :
+    struct llist *llst;
+    struct lcell*lcellule;
+    char*index;
+    llst = new_llist();
+    print_llist(llst);
+    index="A";
+    struct list*lst;
+    lst=new_list();
+    lcellule = make_lcell(index,lst);
+    print_lcell(lcellule);
     return 0;
 }
