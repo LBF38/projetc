@@ -25,10 +25,10 @@ void print_lcell(struct lcell *lcell);
 void print_llist(struct llist *llst);
 
 /* Make a lcell from given values */
-struct lcell *make_lcell(char *index, struct list *index_list);
+struct lcell *make_lcell(struct list *index_list,struct cell*c);
 
 /* Compare cells to the index to insert it to the right place */
-int compare_lcells(struct llist *llst, struct cell *c);
+int compare_lcells(struct lcell *lcellule, struct cell *c);
 
 /* Adds the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist */
 void insert_optimized(struct llist *llst, struct cell *c);

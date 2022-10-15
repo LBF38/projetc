@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+#include <errno.h>
 
 #define NAME_LENGTH 40
 #define ZIP_LENGTH 10

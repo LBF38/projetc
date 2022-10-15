@@ -76,15 +76,27 @@ int main(int argc, char *argv[])
     // free_list(lst);
 
     // Test sur partie 3 :
-    struct llist *llst;
-    struct lcell*lcellule;
-    char*index;
-    llst = new_llist();
+    // struct llist *llst;
+    // struct lcell*lcellule;
+    // char*index;
+    // llst = new_llist();
+    // print_llist(llst);
+    // index="A";
+    // struct list*lst;
+    // lst=new_list();
+    // lcellule = make_lcell(index,lst);
+    // print_lcell(lcellule);
+
+    char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
+    struct llist*llst;
+    llst=load_file_optimized(file);
     print_llist(llst);
-    index="A";
-    struct list*lst;
-    lst=new_list();
-    lcellule = make_lcell(index,lst);
-    print_lcell(lcellule);
+    free_llist(llst);
+    // char *test;
+    // test = "abc";
+    // char *t = (char *)malloc(sizeof(char));
+    // strncpy(t, test, 1);
+    // printf("%c",*t);
+    // free(t);
     return 0;
 }

@@ -1,5 +1,4 @@
 #include "list.h"
-#include <errno.h>
 
 /* Construction/Destruction
 ======================== */
@@ -61,15 +60,15 @@ void print_list(struct list *lst)
 	/* Your code here */
 	struct cell *pCell;
 	pCell = lst->head;
-	printf("{\n");
+	printf("\t{\n");
 	while (pCell != NULL)
 	{
-		printf("   "); // une tabulation pour afficher joliment la liste et son contenu.
+		printf("\t\t"); // une tabulation pour afficher joliment la liste et son contenu.
 		print_cell(pCell);
 		printf(",\n");
 		pCell = pCell->next;
 	}
-	printf("}\n");
+	printf("\t}\n");
 }
 
 /* Cell addition
@@ -179,7 +178,7 @@ void insert(struct list *lst, struct cell *c)
 	current_cell = lst->head;
 	while (current_cell->next != NULL)
 	{
-		if(compare_cells(current_cell->next,c)>0)
+		if (compare_cells(current_cell->next, c) > 0)
 		{
 			c->next = current_cell->next;
 			current_cell->next = c;
@@ -188,7 +187,7 @@ void insert(struct list *lst, struct cell *c)
 		current_cell = current_cell->next;
 	}
 	// CAS 4: on insère à la fin de la liste
-	current_cell->next=c;
-	c->next=NULL;
+	current_cell->next = c;
+	c->next = NULL;
 	return;
 }
