@@ -1,5 +1,8 @@
 {
     "files.associations": {
-        "list.h": "c"
+        "list.h": "c",
+        "list.c": "c",
+        "llist.h": "c",
+        "llist.c": "c"
     }
 }
