@@ -92,11 +92,5 @@ int main(int argc, char *argv[])
     llst=load_file_optimized(file);
     print_llist(llst);
     free_llist(llst);
-    // char *test;
-    // test = "abc";
-    // char *t = (char *)malloc(sizeof(char));
-    // strncpy(t, test, 1);
-    // printf("%c",*t);
-    // free(t);
     return 0;
 }
