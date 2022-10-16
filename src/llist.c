@@ -1,4 +1,6 @@
 #include "llist.h"
+// debug
+int i = 1;
 
 /* Construction/Destruction
 ======================== */
@@ -93,12 +95,22 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
 
 int compare_lcells(struct lcell *lcellule, struct cell *c)
 {
-    char *index = (char *)calloc(1,sizeof(char) + 1);
+    // char *index = (char *)malloc(sizeof(char) + 1);
+    char index[5];
+    // char index=(c->lname)[0];
+    // char index;
+    memcpy(index,c->lname,1);
+    index[1]='\0';
+    // printf("index value : %s\n",index);
+    // index=c->lname[0];
+    // index = *strtok(c->lname,&(c->lname)[1]);
     int compare;
-    strncpy(index, c->lname, 1);
-    lcellule->index[1] = 0;
+    // strncpy(&index, c->lname, 1);
+    // &index=c->lname[0];
     compare = strcmp(lcellule->index, index);
-    free(index);
+    // printf("index n°%d: %s\n",i,index);
+    // printf("lcellule->index n°%d: %s\n",i++,lcellule->index);
+    // free(index);
     return compare;
 }
 
@@ -120,11 +132,11 @@ void insert_optimized(struct llist *llst, struct cell *c)
     if (compare_lcells(llst->head, c) > 0)
     {
         current_lcell = make_lcell(lst, c);
-        printf("Ajout d'une lcell au début de l'index : ");
-        print_lcell(current_lcell);
-        printf("\n");
         current_lcell->next = llst->head;
         llst->head = current_lcell;
+        // printf("Ajout d'une lcell au début de l'index : ");
+        // print_lcell(current_lcell);
+        // printf("\n");
         return;
     }
     // CAS 3: insertion d'une cell dans une list d'une lcell. (on revient aux cas déjà implémentés dans list.c)
@@ -134,30 +146,33 @@ void insert_optimized(struct llist *llst, struct cell *c)
         if (compare_lcells(current_lcell, c) == 0)
         {
             insert(current_lcell->index_list, c);
+            // printf("Ajout dans current_lcell n°%d\n", i++);
             return;
         }
         if (compare_lcells(current_lcell->next, c) > 0)
         {
             new_lcell = make_lcell(lst, c);
-            printf("Ajout d'une lcell entre 2 lcells de l'index : ");
-            print_lcell(new_lcell);
-            printf("\n");
             new_lcell->next = current_lcell->next;
             current_lcell->next = new_lcell;
+            // printf("Ajout d'une lcell entre 2 lcells de l'index : ");
+            // print_lcell(new_lcell);
+            // printf("\n");
             return;
         }
         current_lcell = current_lcell->next;
     }
     // CAS 4: insertion à la fin de la lliste d'une lcell
     // On vérifie au cas où si c ne va pas dans la dernière lcell de l'index
-    if (compare_lcells(current_lcell,c) ==0){
-        insert(current_lcell->index_list,c);
+    if (compare_lcells(current_lcell, c) == 0)
+    {
+        insert(current_lcell->index_list, c);
+        // printf("Ajout dans current_lcell n°%d\n", i++);
         return;
     }
     current_lcell->next = make_lcell(lst, c);
-    printf("Ajout d'une lcell à la fin de l'index : ");
-    print_lcell(current_lcell->next);
-    printf("\n");
+    // printf("Ajout d'une lcell à la fin de l'index : ");
+    // print_lcell(current_lcell->next);
+    // printf("\n");
     return;
 }
 

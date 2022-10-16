@@ -51,13 +51,11 @@ void free_list(struct list *lst)
 
 void print_cell(struct cell *c)
 {
-	/* Your code here */
 	printf("[%s,%s,%s]", c->fname, c->lname, c->zip);
 }
 
 void print_list(struct list *lst)
 {
-	/* Your code here */
 	struct cell *pCell;
 	pCell = lst->head;
 	printf("\t{\n");
@@ -76,7 +74,6 @@ void print_list(struct list *lst)
 
 struct cell *make_cell(char *fname, char *lname, char *zip)
 {
-	/* Your code here */
 	struct cell *one_cell;
 	one_cell = malloc(sizeof(struct cell));
 	one_cell->fname = fname;
@@ -163,7 +160,8 @@ void insert(struct list *lst, struct cell *c)
 	// CAS 1: la liste est vide
 	if (lst->head == NULL)
 	{
-		push(lst, c);
+		c->next = lst->head;
+		lst->head = c;
 		return;
 	}
 	// CAS 2 : insertion en début de liste
