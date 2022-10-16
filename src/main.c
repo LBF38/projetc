@@ -87,10 +87,46 @@ int main(int argc, char *argv[])
     // lcellule = make_lcell(index,lst);
     // print_lcell(lcellule);
 
-    char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
-    struct llist*llst;
-    llst=load_file_optimized(file);
-    print_llist(llst);
-    free_llist(llst);
+    // char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
+    // struct llist *llst;
+    // llst = load_file_optimized(file);
+    // print_llist(llst);
+    // free_llist(llst);
+    int display_mode=0;
+    if (argc < 2)
+    {
+        printf("Please include a path to the file you want to open.\n");
+        exit(-1);
+    }
+    if (argc > 2 && argv[2] != NULL)
+    {
+        if (strcmp(argv[2], "--display") == 0)
+        {
+            display_mode = 1;
+        }
+    }
+    char *file = argv[1];
+
+    if (file != NULL)
+    {
+        // printf("Méthode 1 :\n");
+        // struct list *lst;
+        // lst = load_file(file);
+        // if (display_mode)
+        // {
+        //     print_list(lst);
+        // }
+        // free_list(lst);
+
+        printf("Méthode 2 :\n");
+        struct llist *llst;
+        llst = load_file_optimized(file);
+        if (display_mode)
+        {
+            print_llist(llst);
+        }
+        free_llist(llst);
+    }
+
     return 0;
 }

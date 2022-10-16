@@ -1,6 +1,6 @@
 #include "llist.h"
 // debug
-int i = 1;
+int debug_counter = 1;
 
 /* Construction/Destruction
 ======================== */
@@ -85,8 +85,8 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
 {
     struct lcell *lcellule = (struct lcell *)malloc(sizeof(struct lcell));
     lcellule->index = (char *)malloc(sizeof(char) + 1);
-    strncpy(lcellule->index, c->lname, 1);
-    lcellule->index[1] = 0;
+    memcpy(lcellule->index, c->lname, 1);
+    lcellule->index[1] = 0; 
     insert(index_list, c);
     lcellule->index_list = index_list;
     lcellule->next = NULL;
@@ -95,23 +95,7 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
 
 int compare_lcells(struct lcell *lcellule, struct cell *c)
 {
-    // char *index = (char *)malloc(sizeof(char) + 1);
-    char index[5];
-    // char index=(c->lname)[0];
-    // char index;
-    memcpy(index,c->lname,1);
-    index[1]='\0';
-    // printf("index value : %s\n",index);
-    // index=c->lname[0];
-    // index = *strtok(c->lname,&(c->lname)[1]);
-    int compare;
-    // strncpy(&index, c->lname, 1);
-    // &index=c->lname[0];
-    compare = strcmp(lcellule->index, index);
-    // printf("index n°%d: %s\n",i,index);
-    // printf("lcellule->index n°%d: %s\n",i++,lcellule->index);
-    // free(index);
-    return compare;
+    return strncmp(lcellule->index, c->lname,1);
 }
 
 void insert_optimized(struct llist *llst, struct cell *c)
@@ -123,7 +107,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     // CAS 1: la lliste est vide
     if (llst->head == NULL)
     {
-        printf("lliste vide\n");
+        // printf("lliste vide\n");
         current_lcell = make_lcell(lst, c);
         llst->head = current_lcell;
         return;
@@ -146,7 +130,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
         if (compare_lcells(current_lcell, c) == 0)
         {
             insert(current_lcell->index_list, c);
-            // printf("Ajout dans current_lcell n°%d\n", i++);
+            // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
             return;
         }
         if (compare_lcells(current_lcell->next, c) > 0)
@@ -166,7 +150,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     if (compare_lcells(current_lcell, c) == 0)
     {
         insert(current_lcell->index_list, c);
-        // printf("Ajout dans current_lcell n°%d\n", i++);
+        // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
         return;
     }
     current_lcell->next = make_lcell(lst, c);
