@@ -127,6 +127,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     current_lcell = llst->head;
     while (current_lcell->next != NULL)
     {
+        // #5 Il y a un problème ici (je pense) 
         if (compare_lcells(current_lcell, c) == 0)
         {
             insert(current_lcell->index_list, c);
@@ -149,6 +150,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     // On vérifie au cas où si c ne va pas dans la dernière lcell de l'index
     if (compare_lcells(current_lcell, c) == 0)
     {
+        // #5 Il y a un problème ici aussi (je pense) 
         insert(current_lcell->index_list, c);
         // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
         return;
