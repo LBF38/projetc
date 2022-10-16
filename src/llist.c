@@ -103,11 +103,11 @@ void insert_optimized(struct llist *llst, struct cell *c)
     struct lcell *current_lcell;
     struct lcell *new_lcell;
     struct list *lst;
-    lst = new_list();
     // CAS 1: la lliste est vide
     if (llst->head == NULL)
     {
         // printf("lliste vide\n");
+        lst = new_list();
         current_lcell = make_lcell(lst, c);
         llst->head = current_lcell;
         return;
@@ -115,6 +115,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     // CAS 2: insertion d'une lcell dans une lliste (ajout d'une lettre au début de l'index)
     if (compare_lcells(llst->head, c) > 0)
     {
+        lst = new_list();
         current_lcell = make_lcell(lst, c);
         current_lcell->next = llst->head;
         llst->head = current_lcell;
@@ -136,6 +137,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
         }
         if (compare_lcells(current_lcell->next, c) > 0)
         {
+            lst = new_list();
             new_lcell = make_lcell(lst, c);
             new_lcell->next = current_lcell->next;
             current_lcell->next = new_lcell;
@@ -155,6 +157,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
         // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
         return;
     }
+    lst = new_list();
     current_lcell->next = make_lcell(lst, c);
     // printf("Ajout d'une lcell à la fin de l'index : ");
     // print_lcell(current_lcell->next);
