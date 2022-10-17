@@ -33,8 +33,6 @@ static void free_cells(struct list *lst)
 		cur = cur->next;
 		// If dynamically allocated!
 		free(tmp->fname);
-		// free(tmp->lname);
-		// free(tmp->zip);
 		free(tmp);
 	}
 	lst->head = NULL;
@@ -61,7 +59,7 @@ void print_list(struct list *lst)
 	printf("\t{\n");
 	while (pCell != NULL)
 	{
-		printf("\t\t"); // une tabulation pour afficher joliment la liste et son contenu.
+		printf("\t\t");
 		print_cell(pCell);
 		printf(",\n");
 		pCell = pCell->next;

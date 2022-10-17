@@ -1,6 +1,4 @@
 #include "llist.h"
-// debug
-int debug_counter = 1;
 
 /* Construction/Destruction
 ======================== */
@@ -86,7 +84,7 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
     struct lcell *lcellule = (struct lcell *)malloc(sizeof(struct lcell));
     lcellule->index = (char *)malloc(sizeof(char) + 1);
     memcpy(lcellule->index, c->lname, 1);
-    lcellule->index[1] = 0; 
+    lcellule->index[1] = 0;
     insert(index_list, c);
     lcellule->index_list = index_list;
     lcellule->next = NULL;
@@ -95,7 +93,7 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
 
 int compare_lcells(struct lcell *lcellule, struct cell *c)
 {
-    return strncmp(lcellule->index, c->lname,1);
+    return strncmp(lcellule->index, c->lname, 1);
 }
 
 void insert_optimized(struct llist *llst, struct cell *c)
@@ -106,7 +104,6 @@ void insert_optimized(struct llist *llst, struct cell *c)
     // CAS 1: la lliste est vide
     if (llst->head == NULL)
     {
-        // printf("lliste vide\n");
         lst = new_list();
         current_lcell = make_lcell(lst, c);
         llst->head = current_lcell;
@@ -119,20 +116,15 @@ void insert_optimized(struct llist *llst, struct cell *c)
         current_lcell = make_lcell(lst, c);
         current_lcell->next = llst->head;
         llst->head = current_lcell;
-        // printf("Ajout d'une lcell au début de l'index : ");
-        // print_lcell(current_lcell);
-        // printf("\n");
         return;
     }
     // CAS 3: insertion d'une cell dans une list d'une lcell. (on revient aux cas déjà implémentés dans list.c)
     current_lcell = llst->head;
     while (current_lcell->next != NULL)
     {
-        // #5 Il y a un problème ici (je pense) 
         if (compare_lcells(current_lcell, c) == 0)
         {
             insert(current_lcell->index_list, c);
-            // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
             return;
         }
         if (compare_lcells(current_lcell->next, c) > 0)
@@ -141,9 +133,6 @@ void insert_optimized(struct llist *llst, struct cell *c)
             new_lcell = make_lcell(lst, c);
             new_lcell->next = current_lcell->next;
             current_lcell->next = new_lcell;
-            // printf("Ajout d'une lcell entre 2 lcells de l'index : ");
-            // print_lcell(new_lcell);
-            // printf("\n");
             return;
         }
         current_lcell = current_lcell->next;
@@ -152,16 +141,11 @@ void insert_optimized(struct llist *llst, struct cell *c)
     // On vérifie au cas où si c ne va pas dans la dernière lcell de l'index
     if (compare_lcells(current_lcell, c) == 0)
     {
-        // #5 Il y a un problème ici aussi (je pense) 
         insert(current_lcell->index_list, c);
-        // printf("Ajout dans current_lcell n°%d\n", debug_counter++);
         return;
     }
     lst = new_list();
     current_lcell->next = make_lcell(lst, c);
-    // printf("Ajout d'une lcell à la fin de l'index : ");
-    // print_lcell(current_lcell->next);
-    // printf("\n");
     return;
 }
 

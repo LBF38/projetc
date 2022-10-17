@@ -17,10 +17,10 @@ struct cell {
     struct cell* next;
 };
 
-/* Allocates memory for a list structure and returns the pointer */
+/* Allocate memory for a list structure and return the pointer */
 struct list* new_list();
 
-/* Frees the input list and its cells */
+/* Free the input list and its cells */
 void free_list(struct list* lst);
 
 /* Print a cell as [fname,lname,zip] */
@@ -44,8 +44,8 @@ void pop(struct list* lst, struct cell* out);
 /* Compare two cells, outputs 0 if equal, a negative number if a<b and positive otherwise */
 int compare_cells(struct cell* a, struct cell* b);
 
-/* Adds the cell to the list respecting alphabetical order of names/lnames */
+/* Add the cell to the list respecting alphabetical order of names/lnames */
 void insert(struct list* lst, struct cell* c);
 
-/* Loads the contents of a file in a sorted list */
+/* Load the contents of a file in a sorted list */
 struct list* load_file(char* file_name);

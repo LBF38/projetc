@@ -4,95 +4,7 @@
 
 int main(int argc, char *argv[])
 {
-    // Test Partie 1:
-
-    // struct list *l;
-    // l = new_list();
-    // print_list(l);
-
-    // struct cell *c;
-    // struct cell *d;
-    // c = make_cell("Annie", "ERNAUX", "76170");
-    // d = make_cell("Bertrand", "DOE", "29200");
-
-    // push(l, c);
-    // push(l, d);
-    // push(l, c);
-    // push(l, c);
-    // push(l, d);
-
-    // printf("List status\n");
-    // print_list(l);
-
-    // struct cell *out;
-    // out=malloc(sizeof(struct cell));
-    // pop(l,out);
-
-    // printf("out cell content : \n");
-    // print_cell(out);
-
-    // printf("List status\n");
-    // print_list(l);
-
-    // free_list(l);
-    // free(out);
-
-    // Tests sur partie 2 :
-
-    // Test sur compare_cells :
-    // struct cell* c1;
-    // struct cell* c2;
-    // struct cell* c3;
-    // c1=make_cell("a","a","123");
-    // c2=make_cell("a","b","123");
-    // c3=make_cell("b","b","123");
-    // printf("%d\n",compare_cells(c1,c2)); // résultat attendu : -1 correct!
-    // printf("%d\n",compare_cells(c2,c1)); // résultat attendu :  1 correct!
-    // printf("%d\n",compare_cells(c2,c3)); // résultat attendu : -1 correct!
-
-    // Test sur insert:
-    // struct list *lst;
-    // lst=new_list();
-    // struct cell* c1;
-    // struct cell* c2;
-    // struct cell* c3;
-    // c1=make_cell("a","a","123");
-    // c2=make_cell("a","b","123");
-    // c3=make_cell("b","b","123");
-    // print_list(lst);
-    // insert(lst,c2);
-    // print_list(lst);
-    // insert(lst,c1);
-    // print_list(lst);
-    // insert(lst,c3);
-    // print_list(lst);
-    // free_list(lst);
-
-    // char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
-    // struct list *lst;
-    // lst = load_file(file);
-    // print_list(lst);
-    // // print_cell(lst->head);
-    // free_list(lst);
-
-    // Test sur partie 3 :
-    // struct llist *llst;
-    // struct lcell*lcellule;
-    // char*index;
-    // llst = new_llist();
-    // print_llist(llst);
-    // index="A";
-    // struct list*lst;
-    // lst=new_list();
-    // lcellule = make_lcell(index,lst);
-    // print_lcell(lcellule);
-
-    // char file[50] = "/home/mathis/projetc/projetc/data/small.txt";
-    // struct llist *llst;
-    // llst = load_file_optimized(file);
-    // print_llist(llst);
-    // free_llist(llst);
-    int display_mode=0;
+    int display_mode = 0;
     if (argc < 2)
     {
         printf("Please include a path to the file you want to open.\n");
@@ -112,7 +24,7 @@ int main(int argc, char *argv[])
         printf("Méthode 1 :\n\n");
         printf("Start loading file using method 1\n");
         clock_t function_time;
-        function_time=clock();
+        function_time = clock();
         struct list *lst;
         lst = load_file(file);
         if (display_mode)
@@ -120,14 +32,14 @@ int main(int argc, char *argv[])
             print_list(lst);
         }
         free_list(lst);
-        function_time=clock()-function_time;
+        function_time = clock() - function_time;
         printf("Ended loading file using method 1\n");
-        double time_taken = ((double)function_time)/CLOCKS_PER_SEC;
+        double time_taken = ((double)function_time) / CLOCKS_PER_SEC;
         printf("Time used by method 1 : %f seconds\n", time_taken);
 
         printf("\nMéthode 2 :\n\n");
         printf("Start loading file using method 2\n");
-        function_time=clock();
+        function_time = clock();
         struct llist *llst;
         llst = load_file_optimized(file);
         if (display_mode)
@@ -135,9 +47,9 @@ int main(int argc, char *argv[])
             print_llist(llst);
         }
         free_llist(llst);
-        function_time=clock()-function_time;
+        function_time = clock() - function_time;
         printf("Ended loading file using method 2\n");
-        time_taken = ((double)function_time)/CLOCKS_PER_SEC;
+        time_taken = ((double)function_time) / CLOCKS_PER_SEC;
         printf("Time used by method 2 : %f seconds\n", time_taken);
     }
 
