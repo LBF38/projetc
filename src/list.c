@@ -1,8 +1,23 @@
+/**
+ * @file list.c
+ * @author Mathis URIEN (LBF38)
+ * @brief This is the list.c file
+ * @version 1.0.0
+ * @date 2022-10-19
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include "list.h"
 
 /* Construction/Destruction
 ======================== */
 
+/**
+ * @brief 
+ * 
+ * @return struct list* 
+ */
 struct list *new_list()
 {
 	struct list *lst = (struct list *)malloc(sizeof(struct list));
@@ -16,6 +31,11 @@ struct list *new_list()
 	return lst;
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ */
 static void free_cells(struct list *lst)
 {
 	struct cell *cur;
@@ -38,6 +58,11 @@ static void free_cells(struct list *lst)
 	lst->head = NULL;
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ */
 void free_list(struct list *lst)
 {
 	free_cells(lst);
@@ -47,11 +72,21 @@ void free_list(struct list *lst)
 /* Printing
 ======== */
 
+/**
+ * @brief 
+ * 
+ * @param c 
+ */
 void print_cell(struct cell *c)
 {
 	printf("[%s,%s,%s]", c->fname, c->lname, c->zip);
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ */
 void print_list(struct list *lst)
 {
 	struct cell *pCell;
@@ -70,6 +105,14 @@ void print_list(struct list *lst)
 /* Cell addition
 ============= */
 
+/**
+ * @brief 
+ * 
+ * @param fname 
+ * @param lname 
+ * @param zip 
+ * @return struct cell* 
+ */
 struct cell *make_cell(char *fname, char *lname, char *zip)
 {
 	struct cell *one_cell;
@@ -81,6 +124,12 @@ struct cell *make_cell(char *fname, char *lname, char *zip)
 	return one_cell;
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param c 
+ */
 void push(struct list *lst, struct cell *c)
 {
 	struct cell *cell_copy;
@@ -91,6 +140,12 @@ void push(struct list *lst, struct cell *c)
 	free(c);
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param out 
+ */
 void pop(struct list *lst, struct cell *out)
 {
 	memcpy(out, lst->head, sizeof(struct cell));
@@ -99,6 +154,12 @@ void pop(struct list *lst, struct cell *out)
 	out->next = NULL;
 }
 
+/**
+ * @brief 
+ * 
+ * @param line 
+ * @return struct cell* 
+ */
 struct cell *make_cell_from_line(char *line)
 {
 	char *fname;
@@ -114,6 +175,12 @@ struct cell *make_cell_from_line(char *line)
 	return make_cell(fname, lname, zip);
 }
 
+/**
+ * @brief 
+ * 
+ * @param file_name 
+ * @return struct list* 
+ */
 struct list *load_file(char *file_name)
 {
 	struct list *data;
@@ -141,6 +208,13 @@ struct list *load_file(char *file_name)
 	return data;
 }
 
+/**
+ * @brief 
+ * 
+ * @param a 
+ * @param b 
+ * @return int 
+ */
 int compare_cells(struct cell *a, struct cell *b)
 {
 	int compare = strcmp(a->lname, b->lname);
@@ -152,6 +226,12 @@ int compare_cells(struct cell *a, struct cell *b)
 	return compare;
 }
 
+/**
+ * @brief 
+ * 
+ * @param lst 
+ * @param c 
+ */
 void insert(struct list *lst, struct cell *c)
 {
 	struct cell *current_cell;

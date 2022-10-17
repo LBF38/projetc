@@ -1,0 +1,7 @@
+<map id="src/list.h" name="src/list.h">
+<area shape="rect" id="node1" title=" " alt="" coords="55,5,133,32"/>
+<area shape="rect" id="node2" href="$list_8c.html" title="This is the list.c file." alt="" coords="5,80,81,107"/>
+<area shape="rect" id="node3" href="$llist_8h.html" title=" " alt="" coords="105,80,187,107"/>
+<area shape="rect" id="node4" href="$llist_8c.html" title="This is the llist.c file." alt="" coords="51,155,131,181"/>
+<area shape="rect" id="node5" href="$main_8c.html" title="This is the main file used to launch the methods for loading files." alt="" coords="156,155,245,181"/>
+</map>

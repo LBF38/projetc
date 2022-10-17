@@ -1,0 +1,204 @@
+\hypertarget{list_8c}{}\doxysection{src/list.c File Reference}
+\label{list_8c}\index{src/list.c@{src/list.c}}
+
+
+This is the \mbox{\hyperlink{list_8c}{list.\+c}} file.  
+
+
+{\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
+Include dependency graph for list.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{list_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8c_a43a26d7ecc8fe5c2f3e64c870e5c78fe}{new\+\_\+list}} ()
+\item 
+void \mbox{\hyperlink{list_8c_af6b82cb54067fc24a18ee0dc316d94ef}{free\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
+\item 
+void \mbox{\hyperlink{list_8c_ad97a58a73ba9840649125821636c385e}{print\+\_\+cell}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
+\item 
+void \mbox{\hyperlink{list_8c_ab6f29267d01cc77330215b1563906366}{print\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
+\item 
+struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8c_adacaa021688ccd065f35b7f65f9cf8f5}{make\+\_\+cell}} (char $\ast$fname, char $\ast$lname, char $\ast$zip)
+\item 
+void \mbox{\hyperlink{list_8c_abcdfe5d8ddc6b5198dee7519300439f4}{push}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
+\item 
+void \mbox{\hyperlink{list_8c_a4247735ad16c5038d7c2210a3a0816b8}{pop}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$out)
+\item 
+struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8c_ab898857d81674e03439edd78b2f09cc2}{make\+\_\+cell\+\_\+from\+\_\+line}} (char $\ast$line)
+\item 
+struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8c_ae1a53602948602c5a48a1a0721a2bd4a}{load\+\_\+file}} (char $\ast$file\+\_\+name)
+\item 
+int \mbox{\hyperlink{list_8c_a066ca15ff4ef04b6a4da8c0564f3f881}{compare\+\_\+cells}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$a, struct \mbox{\hyperlink{structcell}{cell}} $\ast$b)
+\item 
+void \mbox{\hyperlink{list_8c_ab136cec3a375f0f3e93d4c2d9f03432f}{insert}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This is the \mbox{\hyperlink{list_8c}{list.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+Mathis U\+R\+I\+EN (L\+B\+F38) 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2022-\/10-\/19
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2022 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{list_8c_a066ca15ff4ef04b6a4da8c0564f3f881}\label{list_8c_a066ca15ff4ef04b6a4da8c0564f3f881}} 
+\index{list.c@{list.c}!compare\_cells@{compare\_cells}}
+\index{compare\_cells@{compare\_cells}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{compare\_cells()}{compare\_cells()}}
+{\footnotesize\ttfamily int compare\+\_\+cells (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{a,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em a} & \\
+\hline
+{\em b} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_af6b82cb54067fc24a18ee0dc316d94ef}\label{list_8c_af6b82cb54067fc24a18ee0dc316d94ef}} 
+\index{list.c@{list.c}!free\_list@{free\_list}}
+\index{free\_list@{free\_list}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{free\_list()}{free\_list()}}
+{\footnotesize\ttfamily void free\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_ab136cec3a375f0f3e93d4c2d9f03432f}\label{list_8c_ab136cec3a375f0f3e93d4c2d9f03432f}} 
+\index{list.c@{list.c}!insert@{insert}}
+\index{insert@{insert}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_ae1a53602948602c5a48a1a0721a2bd4a}\label{list_8c_ae1a53602948602c5a48a1a0721a2bd4a}} 
+\index{list.c@{list.c}!load\_file@{load\_file}}
+\index{load\_file@{load\_file}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{load\_file()}{load\_file()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlist}{list}}$\ast$ load\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+\_\+name} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct list$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_adacaa021688ccd065f35b7f65f9cf8f5}\label{list_8c_adacaa021688ccd065f35b7f65f9cf8f5}} 
+\index{list.c@{list.c}!make\_cell@{make\_cell}}
+\index{make\_cell@{make\_cell}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{make\_cell()}{make\_cell()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structcell}{cell}}$\ast$ make\+\_\+cell (\begin{DoxyParamCaption}\item[{char $\ast$}]{fname,  }\item[{char $\ast$}]{lname,  }\item[{char $\ast$}]{zip }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fname} & \\
+\hline
+{\em lname} & \\
+\hline
+{\em zip} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct cell$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_ab898857d81674e03439edd78b2f09cc2}\label{list_8c_ab898857d81674e03439edd78b2f09cc2}} 
+\index{list.c@{list.c}!make\_cell\_from\_line@{make\_cell\_from\_line}}
+\index{make\_cell\_from\_line@{make\_cell\_from\_line}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{make\_cell\_from\_line()}{make\_cell\_from\_line()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structcell}{cell}}$\ast$ make\+\_\+cell\+\_\+from\+\_\+line (\begin{DoxyParamCaption}\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em line} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct cell$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_a43a26d7ecc8fe5c2f3e64c870e5c78fe}\label{list_8c_a43a26d7ecc8fe5c2f3e64c870e5c78fe}} 
+\index{list.c@{list.c}!new\_list@{new\_list}}
+\index{new\_list@{new\_list}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{new\_list()}{new\_list()}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structlist}{list}}$\ast$ new\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+struct list$\ast$ 
+\end{DoxyReturn}
+\mbox{\Hypertarget{list_8c_a4247735ad16c5038d7c2210a3a0816b8}\label{list_8c_a4247735ad16c5038d7c2210a3a0816b8}} 
+\index{list.c@{list.c}!pop@{pop}}
+\index{pop@{pop}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{out }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+{\em out} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_ad97a58a73ba9840649125821636c385e}\label{list_8c_ad97a58a73ba9840649125821636c385e}} 
+\index{list.c@{list.c}!print\_cell@{print\_cell}}
+\index{print\_cell@{print\_cell}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{print\_cell()}{print\_cell()}}
+{\footnotesize\ttfamily void print\+\_\+cell (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_ab6f29267d01cc77330215b1563906366}\label{list_8c_ab6f29267d01cc77330215b1563906366}} 
+\index{list.c@{list.c}!print\_list@{print\_list}}
+\index{print\_list@{print\_list}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{print\_list()}{print\_list()}}
+{\footnotesize\ttfamily void print\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{list_8c_abcdfe5d8ddc6b5198dee7519300439f4}\label{list_8c_abcdfe5d8ddc6b5198dee7519300439f4}} 
+\index{list.c@{list.c}!push@{push}}
+\index{push@{push}!list.c@{list.c}}
+\doxysubsubsection{\texorpdfstring{push()}{push()}}
+{\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lst} & \\
+\hline
+{\em c} & \\
+\hline
+\end{DoxyParams}

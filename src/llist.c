@@ -1,8 +1,23 @@
+/**
+ * @file llist.c
+ * @author Mathis URIEN (LBF38)
+ * @brief This is the llist.c file
+ * @version 1.0.0
+ * @date 2022-10-19
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
 #include "llist.h"
 
 /* Construction/Destruction
 ======================== */
 
+/**
+ * @brief new_llist allocates memory for a new llist and returns its pointer.
+ * 
+ * @return struct llist* 
+ */
 struct llist *new_llist()
 {
     struct llist *llst = (struct llist *)malloc(sizeof(struct llist));
@@ -14,6 +29,8 @@ struct llist *new_llist()
     return llst;
 }
 
+/// @brief
+/// @param llst
 static void free_lcells(struct llist *llst)
 {
     struct lcell *current;
@@ -36,6 +53,8 @@ static void free_lcells(struct llist *llst)
     llst->head = NULL;
 }
 
+/// @brief
+/// @param llst
 void free_llist(struct llist *llst)
 {
     free_lcells(llst);
@@ -46,6 +65,8 @@ void free_llist(struct llist *llst)
 /* Printing
 ======== */
 
+/// @brief
+/// @param lcell
 void print_lcell(struct lcell *lcell)
 {
     printf("[%s,\n", lcell->index);
@@ -61,6 +82,8 @@ void print_lcell(struct lcell *lcell)
     }
 }
 
+/// @brief
+/// @param llst
 void print_llist(struct llist *llst)
 {
     struct lcell *plcell;
@@ -79,6 +102,7 @@ void print_llist(struct llist *llst)
 /* Cell addition
 ============= */
 
+/// @brief
 struct lcell *make_lcell(struct list *index_list, struct cell *c)
 {
     struct lcell *lcellule = (struct lcell *)malloc(sizeof(struct lcell));
@@ -91,11 +115,21 @@ struct lcell *make_lcell(struct list *index_list, struct cell *c)
     return lcellule;
 }
 
+/// @brief
+/// @param lcellule
+/// @param c
+/// @return
 int compare_lcells(struct lcell *lcellule, struct cell *c)
 {
     return strncmp(lcellule->index, c->lname, 1);
 }
 
+/**
+ * @brief
+ *
+ * @param llst
+ * @param c
+ */
 void insert_optimized(struct llist *llst, struct cell *c)
 {
     struct lcell *current_lcell;
@@ -149,6 +183,7 @@ void insert_optimized(struct llist *llst, struct cell *c)
     return;
 }
 
+/// @brief This is a brief description of load_file_optimized
 struct llist *load_file_optimized(char *file_name)
 {
     struct llist *llst;
