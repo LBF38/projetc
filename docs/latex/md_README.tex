@@ -1,0 +1,55 @@
+\hypertarget{md_README_autotoc_md6}{}\doxysection{Introduction}\label{md_README_autotoc_md6}
+L\textquotesingle{}objectif du projet cette année est de mettre en place un gestionnaire de données du type {\ttfamily Prénom, Nom, Code Postal;}. La première partie définit une structure données qui n\textquotesingle{}est autre qu\textquotesingle{}une liste chaînée dans laquelle ces informations seront stockées. La deuxième partie se concentre sur la lecture des données depuis un fichier et de structuration intelligente au chargement. La troisième partie utilise une structure de données plus optimisée, une liste chaînée de listes chaînées.
+
+Un squelette du projet vous est proposé et contient \+:
+
+
+\begin{DoxyItemize}
+\item une structure de projet C à respecter avec son {\ttfamily makefile} dédié
+\item {\ttfamily list.\+h}, le header contenant la première structure ainsi que les signatures des fonctions à créer
+\item {\ttfamily list.\+c}, le fichier à compléter avec vos fonctions
+\item {\ttfamily llist.\+c} et {\ttfamily llist.\+h} les équivalents pour la structure optimisée
+\item {\ttfamily main.\+c}, le fichier qui permet de s\textquotesingle{}interfacer avec vos fonctions (et d\textquotesingle{}y écrire vos tests !)
+\item {\ttfamily data}, le dossier dans lequel plusieurs bases de données vous sont proposées, à noter que nous testerons votre projet avec des bases de données différentes mais équivalentes
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysection{Première partie \+: Structure de données}\label{md_README_autotoc_md7}
+Les structure de données {\ttfamily list} et {\ttfamily cell} vous sont données et permettent de définir une liste chaînées de personnes à partir de leurs informations \+: nom, prénom et code postal (ou {\ttfamily fname}, {\ttfamily lname} et {\ttfamily zip}). Un exemple d\textquotesingle{}utilisation de ces structures de données vous est illustré sur la figure ci-\/dessous.
+
+ 
+
+
+\begin{DoxyEnumerate}
+\item Écrire une fonction {\ttfamily make\+\_\+cell} qui crée une cellule à partir des informations de ses champs.
+\item Écrire une fonction {\ttfamily push} qui ajoute une cellule dont on donne le pointeur en tête de liste.
+\item Écrire une fonction {\ttfamily print\+\_\+cell} capable d\textquotesingle{}afficher le contenu d\textquotesingle{}une cellule sous la forme {\ttfamily \mbox{[}prénom, nom, code postal\mbox{]}}.
+\item Écrire une fonction {\ttfamily print\+\_\+list} capable d\textquotesingle{}afficher le contenu d\textquotesingle{}une liste sous la forme
+
+\`{}\`{}\`{}c \{ \mbox{[}prénom 1, nom 1, code postal 1\mbox{]}, \mbox{[}prénom 2, ...\mbox{]}, ... \} \`{}\`{}\`{}
+\item Écrire une fonction {\ttfamily pop} dont la signature vous est donnée qui enlève la cellule en tête de liste et renvoie le pointeur vers sa valeur. La tester à l\textquotesingle{}aide des fonctions d\textquotesingle{}affichage dédiées.
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md8}{}\doxysection{Deuxième partie \+: Lecture de données}\label{md_README_autotoc_md8}
+Il faut maintenant lire les données depuis un fichier et les ajouter dynamiquement dans votre structure. Les fichiers présents dans le répertoire {\ttfamily data} peuvent vous servir de tests pour vos fonctions. Trois fichiers de taille différente vous sont proposés contenant respectivement 100, 30000 et 100000 entrées.
+
+
+\begin{DoxyEnumerate}
+\item Écrire une fonction {\ttfamily make\+\_\+cell\+\_\+from\+\_\+line} qui crée une cellule à partir d\textquotesingle{}une ligne de données.
+\item Écrire une fonction {\ttfamily load\+\_\+file} qui ajoute toutes les données d\textquotesingle{}un fichier dans votre liste.
+\item Écrire une fonction {\ttfamily compare\+\_\+cells} qui compare deux cellules selon leur nom de famille (puis prénom si égaux) par ordre alphabétique.
+\item Écrire une fonction {\ttfamily insert} qui ajoute une nouvelle donnée au bon endroit (selon l\textquotesingle{}ordre défini ci-\/dessus) dans la structure de données. Modifier votre fonction {\ttfamily load\+\_\+file} pour utiliser cette nouvelle fonctionnalité.
+\item Afficher la liste chargée et vérifier qu\textquotesingle{}elle est correctement triée.
+\end{DoxyEnumerate}
+
+\begin{quote}
+{\itshape {\bfseries{Note\+:}}} les fonctions de la librairie {\ttfamily string.\+h} vous seront utiles.$\ast$ \end{quote}
+\hypertarget{md_README_autotoc_md9}{}\doxysection{Troisième partie \+: Structure de données optimisée}\label{md_README_autotoc_md9}
+Pour éviter de devoir traverser toutes les entrées en cas d\textquotesingle{}ajout d\textquotesingle{}une nouvelle, nous décidons de rajouter la première lettre de chaque nom comme caractère discriminant. Nous allons maintenant utiliser une liste chaînée de liste chaînées, la première représentant les premières lettres des noms de famille, pour accélérer l\textquotesingle{}accès aux données et l\textquotesingle{}ajout d\textquotesingle{}une nouvelle donnée. Un exemple d\textquotesingle{}utilisation est présentée sur la figure ci-\/dessous.
+
+ 
+
+
+\begin{DoxyEnumerate}
+\item Définir votre structure et votre nouveau type de cellule.
+\item Définir les fonctions associées à votre nouveau type de données (les équivalents de {\ttfamily make\+\_\+cell}, {\ttfamily compare\+\_\+cells}, {\ttfamily insert} et {\ttfamily load\+\_\+file} ainsi que les fonctions de construction et destruction).
+\item En utilisant les fichiers les plus volumineux, mesurer le temps de création total des deux structures de données. Mesurer les différences de temps sur les différents fichiers fournis (si possible !).
+\end{DoxyEnumerate}
+
+\begin{quote}
+{\itshape {\bfseries{Note\+:}}} La bibliothèque {\ttfamily time.\+h} vous sera utile. \end{quote}

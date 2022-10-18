@@ -1,7 +1,24 @@
+/**
+ * @file main.c
+ * @author Mathis URIEN (LBF38)
+ * @brief This is the main file used to launch the methods for loading files.
+ * @version 1.0.0
+ * @date 2022-10-19
+ * 
+ * @copyright Copyright (c) 2022
+ * 
+ */
 #include <time.h>
 
 #include "llist.h"
 
+/**
+ * @brief 
+ * 
+ * @param argc 
+ * @param argv 
+ * @return int 
+ */
 int main(int argc, char *argv[])
 {
     int display_mode = 0;
@@ -13,10 +30,10 @@ int main(int argc, char *argv[])
         printf("Please include a path to the file you want to open.\n\n"
                "Usage : ./bin/womc [path/to/file.txt] [-options]\n\n"
                "Available options :\n\n"
-               "-d,--display          Display the list resulting of the method used\n"
-               "-m1,--method1         Launch only the method 1. Compatible with the display option.\n"
-               "-m2,--method2         Launch only the method 2. Compatible with the display option.\n"
-               "--default             Launch both methods in default mode. Disable the display option.\n"
+               "-d,--display               Display the list resulting of the method used\n"
+               "-m1,--method1              Launch only the method 1. Compatible with the display option.\n"
+               "-m2,--method2              Launch only the method 2. Compatible with the display option.\n"
+               "--default       (optional) Launch both methods in default mode. Compatible with the display option.\n"
                );
 
         exit(-1);
