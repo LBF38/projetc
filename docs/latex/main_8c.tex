@@ -2,13 +2,12 @@
 \label{main_8c}\index{src/main.c@{src/main.c}}
 
 
-This is the main file used to launch the methods for loading files.  
+This is the \mbox{\hyperlink{main_8c}{main.\+c}} file used to launch the methods for loading files.  
 
 
 {\ttfamily \#include $<$time.\+h$>$}\newline
 {\ttfamily \#include \char`\"{}llist.\+h\char`\"{}}\newline
-Include dependency graph for main.\+c\+:
-\nopagebreak
+Include dependency graph for main.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,11 +18,11 @@ Include dependency graph for main.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 int \mbox{\hyperlink{main_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em The main file runs the different methods and measures execution time. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
-This is the main file used to launch the methods for loading files. 
+This is the \mbox{\hyperlink{main_8c}{main.\+c}} file used to launch the methods for loading files. 
 
 \begin{DoxyAuthor}{Author}
 Mathis U\+R\+I\+EN (L\+B\+F38) 
@@ -46,6 +45,13 @@ Copyright (c) 2022
 \doxysubsubsection{\texorpdfstring{main()}{main()}}
 {\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
+
+
+The main file runs the different methods and measures execution time. 
+
+It has some options to only measure one method with a file. \begin{DoxyWarning}{Warning}
+The file argument is needed to correctly use the program. Only options are optional.
+\end{DoxyWarning}
 
 \begin{DoxyParams}{Parameters}
 {\em argc} & \\

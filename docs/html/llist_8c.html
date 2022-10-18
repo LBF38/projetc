@@ -73,7 +73,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This is the <a class="el" href="llist_8c.html" title="This is the llist.c file.">llist.c</a> file.  
+<p>This is the <a class="el" href="llist_8c.html" title="This is the llist.c file It implements the 2nd method of the project. In order to optimize the loadin...">llist.c</a> file It implements the 2nd method of the project. In order to optimize the loading of data, we use an index to store more efficiently.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="llist_8h_source.html">llist.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -81,9 +81,9 @@ Include dependency graph for llist.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="llist_8c__incl.png" border="0" usemap="#src_2llist_8c" alt=""/></div>
 <map name="src_2llist_8c" id="src_2llist_8c">
-<area shape="rect" title="This is the llist.c file." alt="" coords="141,5,221,32"/>
-<area shape="rect" href="llist_8h.html" title=" " alt="" coords="151,80,210,107"/>
-<area shape="rect" href="list_8h.html" title=" " alt="" coords="153,155,208,181"/>
+<area shape="rect" title="This is the llist.c file It implements the 2nd method of the project. In order to optimize the loadin..." alt="" coords="141,5,221,32"/>
+<area shape="rect" href="llist_8h.html" title="Defines the llist.c functions and structures." alt="" coords="151,80,210,107"/>
+<area shape="rect" href="list_8h.html" title="Defines the list.c functions and structures." alt="" coords="153,155,208,181"/>
 <area shape="rect" title=" " alt="" coords="5,229,76,256"/>
 <area shape="rect" title=" " alt="" coords="101,229,167,256"/>
 <area shape="rect" title=" " alt="" coords="192,229,263,256"/>
@@ -94,28 +94,36 @@ Include dependency graph for llist.c:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ac3312899610c4946aa78c6e99af92b23"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structllist.html">llist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#ac3312899610c4946aa78c6e99af92b23">new_llist</a> ()</td></tr>
-<tr class="memdesc:ac3312899610c4946aa78c6e99af92b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">new_llist allocates memory for a new llist and returns its pointer.  <a href="llist_8c.html#ac3312899610c4946aa78c6e99af92b23">More...</a><br /></td></tr>
+<tr class="memdesc:ac3312899610c4946aa78c6e99af92b23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocates memory for a llist structure and returns the pointer.  <a href="llist_8c.html#ac3312899610c4946aa78c6e99af92b23">More...</a><br /></td></tr>
 <tr class="separator:ac3312899610c4946aa78c6e99af92b23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d4fa25c2d14a70d9f31eef16cc819c2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a4d4fa25c2d14a70d9f31eef16cc819c2">free_llist</a> (struct <a class="el" href="structllist.html">llist</a> *llst)</td></tr>
+<tr class="memdesc:a4d4fa25c2d14a70d9f31eef16cc819c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the input llist and its lcells.  <a href="llist_8c.html#a4d4fa25c2d14a70d9f31eef16cc819c2">More...</a><br /></td></tr>
 <tr class="separator:a4d4fa25c2d14a70d9f31eef16cc819c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a96127e0a9c39f8d657dde212214cf88f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a96127e0a9c39f8d657dde212214cf88f">print_lcell</a> (struct <a class="el" href="structlcell.html">lcell</a> *<a class="el" href="structlcell.html">lcell</a>)</td></tr>
+<tr class="memdesc:a96127e0a9c39f8d657dde212214cf88f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the lcell content using a list format : <br  />
+.  <a href="llist_8c.html#a96127e0a9c39f8d657dde212214cf88f">More...</a><br /></td></tr>
 <tr class="separator:a96127e0a9c39f8d657dde212214cf88f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7f46cc6c338760115d1096566310fbd2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a7f46cc6c338760115d1096566310fbd2">print_llist</a> (struct <a class="el" href="structllist.html">llist</a> *llst)</td></tr>
+<tr class="memdesc:a7f46cc6c338760115d1096566310fbd2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the llist using a format like : <br  />
+ {{ <br  />
+ "prints the lcells" <br  />
+ }}.  <a href="llist_8c.html#a7f46cc6c338760115d1096566310fbd2">More...</a><br /></td></tr>
 <tr class="separator:a7f46cc6c338760115d1096566310fbd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9b1ec25598a2a26e6fdbdf25d61e9627"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structlcell.html">lcell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a9b1ec25598a2a26e6fdbdf25d61e9627">make_lcell</a> (struct <a class="el" href="structlist.html">list</a> *index_list, struct <a class="el" href="structcell.html">cell</a> *c)</td></tr>
+<tr class="memdesc:a9b1ec25598a2a26e6fdbdf25d61e9627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a lcell from given values.  <a href="llist_8c.html#a9b1ec25598a2a26e6fdbdf25d61e9627">More...</a><br /></td></tr>
 <tr class="separator:a9b1ec25598a2a26e6fdbdf25d61e9627"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64261cf1996904870fbbbe55043465ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a64261cf1996904870fbbbe55043465ca">compare_lcells</a> (struct <a class="el" href="structlcell.html">lcell</a> *lcellule, struct <a class="el" href="structcell.html">cell</a> *c)</td></tr>
-<tr class="memdesc:a64261cf1996904870fbbbe55043465ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare cells to the index to insert it to the right place.  <a href="llist_8c.html#a64261cf1996904870fbbbe55043465ca">More...</a><br /></td></tr>
+<tr class="memdesc:a64261cf1996904870fbbbe55043465ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compares the cellule we want to insert with the index.  <a href="llist_8c.html#a64261cf1996904870fbbbe55043465ca">More...</a><br /></td></tr>
 <tr class="separator:a64261cf1996904870fbbbe55043465ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3f8aca215d77a4be6f43852ced804dda"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#a3f8aca215d77a4be6f43852ced804dda">insert_optimized</a> (struct <a class="el" href="structllist.html">llist</a> *llst, struct <a class="el" href="structcell.html">cell</a> *c)</td></tr>
-<tr class="memdesc:a3f8aca215d77a4be6f43852ced804dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist.  <a href="llist_8c.html#a3f8aca215d77a4be6f43852ced804dda">More...</a><br /></td></tr>
+<tr class="memdesc:a3f8aca215d77a4be6f43852ced804dda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts the cell in the optimized llist.  <a href="llist_8c.html#a3f8aca215d77a4be6f43852ced804dda">More...</a><br /></td></tr>
 <tr class="separator:a3f8aca215d77a4be6f43852ced804dda"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aee0668a70cd72ccf3c2e23e663d1a447"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structllist.html">llist</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="llist_8c.html#aee0668a70cd72ccf3c2e23e663d1a447">load_file_optimized</a> (char *file_name)</td></tr>
-<tr class="memdesc:aee0668a70cd72ccf3c2e23e663d1a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a brief description of load_file_optimized.  <a href="llist_8c.html#aee0668a70cd72ccf3c2e23e663d1a447">More...</a><br /></td></tr>
+<tr class="memdesc:aee0668a70cd72ccf3c2e23e663d1a447"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the contents of a file in a sorted list.  <a href="llist_8c.html#aee0668a70cd72ccf3c2e23e663d1a447">More...</a><br /></td></tr>
 <tr class="separator:aee0668a70cd72ccf3c2e23e663d1a447"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This is the <a class="el" href="llist_8c.html" title="This is the llist.c file.">llist.c</a> file. </p>
+<div class="textblock"><p>This is the <a class="el" href="llist_8c.html" title="This is the llist.c file It implements the 2nd method of the project. In order to optimize the loadin...">llist.c</a> file It implements the 2nd method of the project. In order to optimize the loading of data, we use an index to store more efficiently. </p>
 <dl class="section author"><dt>Author</dt><dd>Mathis URIEN (LBF38) </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>1.0.0 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2022-10-19</dd></dl>
@@ -147,7 +155,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Compare cells to the index to insert it to the right place. </p>
+<p>Compares the cellule we want to insert with the index. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lcellule</td><td></td></tr>
@@ -155,7 +163,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
 </div>
@@ -174,6 +182,8 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Free the input llist and its lcells. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">llst</td><td></td></tr>
@@ -209,7 +219,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist. </p>
+<p>Inserts the cell in the optimized llist. </p>
+<p>It compares the cell we want to insert with the index letters and then insert it in the right place.</p>
+<p>There are 4 cases : <br  />
+</p><ul>
+<li>the list is empty.</li>
+<li>the list doesn't have the lcell at the beginning. We create and insert a lcell at the top of the llist.</li>
+<li>the list doesn't have the lcell at the end. We create and insert a lcell at the end of the llist.</li>
+<li>the list has the lcell and we insert the cell in the index_list.</li>
+</ul>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">llst</td><td></td></tr>
@@ -236,8 +254,15 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>This is a brief description of load_file_optimized. </p>
 <p>Load the contents of a file in a sorted list. </p>
+<p>Loads the file, creates cells with each line and insert it into the llist.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">file_name</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>struct llist* </dd></dl>
 
 </div>
 </div>
@@ -266,6 +291,9 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Make a lcell from given values. </p>
+<p>It uses the first character of the c-&gt;lname and inserts the cellule <code>c</code> into the index_list It also allocates the memory for the lcellule and its core components. (index, index_list)</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">index_list</td><td></td></tr>
@@ -292,8 +320,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>new_llist allocates memory for a new llist and returns its pointer. </p>
-<p>Allocate memory for a llist structure and return the pointer.</p>
+<p>Allocates memory for a llist structure and returns the pointer. </p>
 <dl class="section return"><dt>Returns</dt><dd>struct llist* </dd></dl>
 
 </div>
@@ -313,6 +340,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the lcell content using a list format : <br  />
+. </p>
+<p>Example of printing : <br  />
+ [A, <br  />
+ { <br  />
+ [Firstname,Aname,1234], <br  />
+ } <br  />
+ ,B] <br  />
+Therefore, it shows the content of the current index letter, the index_list and the next index letter.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lcell</td><td></td></tr>
@@ -337,6 +374,11 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Prints the llist using a format like : <br  />
+ {{ <br  />
+ "prints the lcells" <br  />
+ }}. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">llst</td><td></td></tr>

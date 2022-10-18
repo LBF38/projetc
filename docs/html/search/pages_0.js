@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notes_20on_20the_20project_2',['Notes on the project',['../md_Notes.html',1,'']]]
+  ['my_20c_2dlang_20project_20documentation_59',['My C-lang project documentation',['../md_src_main_page.html',1,'']]]
 ];

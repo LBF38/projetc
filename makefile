@@ -17,7 +17,7 @@ $(info OBJECTS is $(OBJECTS))
 # This rule produces the executable by compiling and linking all objects
 # $< are the names of all prerequisites (the object files)
 # $@ is the name of the target (bin/womc in this case)
-bin/womc: $(OBJECTS)
+bin/annuaire: $(OBJECTS)
 	$(CC) $^ $(CC_FLAGS) -o $@ 
 # must start with TAB character
 

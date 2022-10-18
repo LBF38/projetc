@@ -15,7 +15,7 @@
     \subitem {list.h}, \hyperpage{16}
   \item {free\_llist}
     \subitem {llist.c}, \hyperpage{20}
-    \subitem {llist.h}, \hyperpage{24}
+    \subitem {llist.h}, \hyperpage{26}
 
   \indexspace
 
@@ -23,8 +23,8 @@
     \subitem {list.c}, \hyperpage{11}
     \subitem {list.h}, \hyperpage{16}
   \item {insert\_optimized}
-    \subitem {llist.c}, \hyperpage{20}
-    \subitem {llist.h}, \hyperpage{24}
+    \subitem {llist.c}, \hyperpage{21}
+    \subitem {llist.h}, \hyperpage{26}
 
   \indexspace
 
@@ -58,34 +58,34 @@
   \item {llist.c}
     \subitem {compare\_lcells}, \hyperpage{20}
     \subitem {free\_llist}, \hyperpage{20}
-    \subitem {insert\_optimized}, \hyperpage{20}
+    \subitem {insert\_optimized}, \hyperpage{21}
     \subitem {load\_file\_optimized}, \hyperpage{21}
     \subitem {make\_lcell}, \hyperpage{21}
-    \subitem {new\_llist}, \hyperpage{21}
+    \subitem {new\_llist}, \hyperpage{22}
     \subitem {print\_lcell}, \hyperpage{22}
     \subitem {print\_llist}, \hyperpage{22}
   \item {llist.h}
     \subitem {compare\_lcells}, \hyperpage{24}
-    \subitem {free\_llist}, \hyperpage{24}
-    \subitem {insert\_optimized}, \hyperpage{24}
-    \subitem {load\_file\_optimized}, \hyperpage{25}
-    \subitem {make\_lcell}, \hyperpage{25}
-    \subitem {new\_llist}, \hyperpage{25}
-    \subitem {print\_lcell}, \hyperpage{26}
-    \subitem {print\_llist}, \hyperpage{26}
+    \subitem {free\_llist}, \hyperpage{26}
+    \subitem {insert\_optimized}, \hyperpage{26}
+    \subitem {load\_file\_optimized}, \hyperpage{26}
+    \subitem {make\_lcell}, \hyperpage{27}
+    \subitem {new\_llist}, \hyperpage{27}
+    \subitem {print\_lcell}, \hyperpage{27}
+    \subitem {print\_llist}, \hyperpage{28}
   \item {load\_file}
     \subitem {list.c}, \hyperpage{11}
     \subitem {list.h}, \hyperpage{16}
   \item {load\_file\_optimized}
     \subitem {llist.c}, \hyperpage{21}
-    \subitem {llist.h}, \hyperpage{25}
+    \subitem {llist.h}, \hyperpage{26}
 
   \indexspace
 
   \item {main}
-    \subitem {main.c}, \hyperpage{28}
+    \subitem {main.c}, \hyperpage{30}
   \item {main.c}
-    \subitem {main}, \hyperpage{28}
+    \subitem {main}, \hyperpage{30}
   \item {make\_cell}
     \subitem {list.c}, \hyperpage{11}
     \subitem {list.h}, \hyperpage{16}
@@ -94,7 +94,7 @@
     \subitem {list.h}, \hyperpage{17}
   \item {make\_lcell}
     \subitem {llist.c}, \hyperpage{21}
-    \subitem {llist.h}, \hyperpage{25}
+    \subitem {llist.h}, \hyperpage{27}
 
   \indexspace
 
@@ -102,8 +102,8 @@
     \subitem {list.c}, \hyperpage{12}
     \subitem {list.h}, \hyperpage{17}
   \item {new\_llist}
-    \subitem {llist.c}, \hyperpage{21}
-    \subitem {llist.h}, \hyperpage{25}
+    \subitem {llist.c}, \hyperpage{22}
+    \subitem {llist.h}, \hyperpage{27}
 
   \indexspace
 
@@ -115,13 +115,13 @@
     \subitem {list.h}, \hyperpage{18}
   \item {print\_lcell}
     \subitem {llist.c}, \hyperpage{22}
-    \subitem {llist.h}, \hyperpage{26}
+    \subitem {llist.h}, \hyperpage{27}
   \item {print\_list}
     \subitem {list.c}, \hyperpage{13}
     \subitem {list.h}, \hyperpage{18}
   \item {print\_llist}
     \subitem {llist.c}, \hyperpage{22}
-    \subitem {llist.h}, \hyperpage{26}
+    \subitem {llist.h}, \hyperpage{28}
   \item {push}
     \subitem {list.c}, \hyperpage{13}
     \subitem {list.h}, \hyperpage{18}
@@ -131,7 +131,7 @@
   \item {src/list.c}, \hyperpage{9}
   \item {src/list.h}, \hyperpage{13}
   \item {src/llist.c}, \hyperpage{18}
-  \item {src/llist.h}, \hyperpage{22}
-  \item {src/main.c}, \hyperpage{26}
+  \item {src/llist.h}, \hyperpage{23}
+  \item {src/main.c}, \hyperpage{28}
 
 \end{theindex}

@@ -68,14 +68,19 @@ $(function() {
 <div class="title">lcell Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Defines the lcell structure.  
+ <a href="structlcell.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="llist_8h_source.html">llist.h</a>&gt;</code></p>
 <div class="dynheader">
 Collaboration diagram for lcell:</div>
 <div class="dyncontent">
 <div class="center"><img src="structlcell__coll__graph.png" border="0" usemap="#lcell_coll__map" alt="Collaboration graph"/></div>
 <map name="lcell_coll__map" id="lcell_coll__map">
-<area shape="rect" title=" " alt="" coords="5,184,55,211"/>
-<area shape="rect" href="structlist.html" title=" " alt="" coords="9,95,51,121"/>
-<area shape="rect" href="structcell.html" title=" " alt="" coords="7,5,53,32"/>
+<area shape="rect" title="Defines the lcell structure." alt="" coords="5,184,55,211"/>
+<area shape="rect" href="structlist.html" title="Defines the list structure." alt="" coords="9,95,51,121"/>
+<area shape="rect" href="structcell.html" title="Defines the cell structure." alt="" coords="7,5,53,32"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -91,7 +96,14 @@ struct <a class="el" href="structlist.html">list</a> *&#160;</td><td class="memI
 struct <a class="el" href="structlcell.html">lcell</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>next</b></td></tr>
 <tr class="separator:a20c6bb43e162e1f307426b9c70f3ffb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Defines the lcell structure. </p>
+<p>The lcell has 3 values :</p><ul>
+<li>index : it is the letter for referencing the last names</li>
+<li>index_list : it contains the names corresponding to the index letter</li>
+<li>next : it points to the next cell or is NULL if it is the last lcell of the llist. </li>
+</ul>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>src/<a class="el" href="llist_8h_source.html">llist.h</a></li>
 </ul>
 </div><!-- contents -->

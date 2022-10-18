@@ -1,16 +1,19 @@
 \hypertarget{llist_8h}{}\doxysection{src/llist.h File Reference}
 \label{llist_8h}\index{src/llist.h@{src/llist.h}}
+
+
+Defines the \mbox{\hyperlink{llist_8c}{llist.\+c}} functions and structures.  
+
+
 {\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
-Include dependency graph for llist.\+h\+:
-\nopagebreak
+Include dependency graph for llist.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=342pt]{llist_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,31 +24,37 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the llist structure. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the lcell structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_ac3312899610c4946aa78c6e99af92b23}{new\+\_\+llist}} ()
-\begin{DoxyCompactList}\small\item\em Allocate memory for a llist structure and return the pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Allocates memory for a llist structure and returns the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a4d4fa25c2d14a70d9f31eef16cc819c2}{free\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\item 
+\begin{DoxyCompactList}\small\item\em Free the input llist and its lcells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a96127e0a9c39f8d657dde212214cf88f}{print\+\_\+lcell}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$\mbox{\hyperlink{structlcell}{lcell}})
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the lcell content using a list format \+: ~\newline
+. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a7f46cc6c338760115d1096566310fbd2}{print\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\item 
+\begin{DoxyCompactList}\small\item\em Prints the llist using a format like \+: ~\newline
+ \{\{ ~\newline
+ \char`\"{}prints the lcells\char`\"{} ~\newline
+ \}\}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$ \mbox{\hyperlink{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}{make\+\_\+lcell}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$index\+\_\+list, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Make a lcell from given values. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{llist_8h_a64261cf1996904870fbbbe55043465ca}{compare\+\_\+lcells}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$lcellule, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Compare cells to the index to insert it to the right place. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compares the cellule we want to insert with the index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a3f8aca215d77a4be6f43852ced804dda}{insert\+\_\+optimized}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the cell in the optimized llist. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_aee0668a70cd72ccf3c2e23e663d1a447}{load\+\_\+file\+\_\+optimized}} (char $\ast$file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{llist_8c}{llist.\+c}} functions and structures. 
+
 \begin{DoxyAuthor}{Author}
 Mathis U\+R\+I\+EN (L\+B\+F38) 
 \end{DoxyAuthor}
@@ -53,7 +62,7 @@ Mathis U\+R\+I\+EN (L\+B\+F38)
 1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2022-\/10-\/19
+2022-\/10-\/19 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -69,7 +78,7 @@ Copyright (c) 2022
 
 
 
-Compare cells to the index to insert it to the right place. 
+Compares the cellule we want to insert with the index. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -79,23 +88,17 @@ Compare cells to the index to insert it to the right place.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-
-\begin{DoxyParams}{Parameters}
-{\em lcellule} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-
+int 
 \end{DoxyReturn}
 \mbox{\Hypertarget{llist_8h_a4d4fa25c2d14a70d9f31eef16cc819c2}\label{llist_8h_a4d4fa25c2d14a70d9f31eef16cc819c2}} 
 \index{llist.h@{llist.h}!free\_llist@{free\_llist}}
 \index{free\_llist@{free\_llist}!llist.h@{llist.h}}
 \doxysubsubsection{\texorpdfstring{free\_llist()}{free\_llist()}}
 {\footnotesize\ttfamily void free\+\_\+llist (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structllist}{llist}} $\ast$}]{llst }\end{DoxyParamCaption})}
+
+
+
+Free the input llist and its lcells. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -110,7 +113,18 @@ int
 
 
 
-Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist. 
+Inserts the cell in the optimized llist. 
+
+It compares the cell we want to insert with the index letters and then insert it in the right place.
+
+There are 4 cases \+: ~\newline
+
+\begin{DoxyItemize}
+\item the list is empty.
+\item the list doesn\textquotesingle{}t have the lcell at the beginning. We create and insert a lcell at the top of the llist.
+\item the list doesn\textquotesingle{}t have the lcell at the end. We create and insert a lcell at the end of the llist.
+\item the list has the lcell and we insert the cell in the index\+\_\+list.
+\end{DoxyItemize}
 
 
 \begin{DoxyParams}{Parameters}
@@ -129,19 +143,27 @@ Add the cell to the llist respecting alphabetical order of names/lnames and inse
 
 Load the contents of a file in a sorted list. 
 
+Loads the file, creates cells with each line and insert it into the llist.
+
 
 \begin{DoxyParams}{Parameters}
 {\em file\+\_\+name} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-struct llist$\ast$
+struct llist$\ast$ 
 \end{DoxyReturn}
-Load the contents of a file in a sorted list. \mbox{\Hypertarget{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}\label{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}} 
+\mbox{\Hypertarget{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}\label{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}} 
 \index{llist.h@{llist.h}!make\_lcell@{make\_lcell}}
 \index{make\_lcell@{make\_lcell}!llist.h@{llist.h}}
 \doxysubsubsection{\texorpdfstring{make\_lcell()}{make\_lcell()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structlcell}{lcell}}$\ast$ make\+\_\+lcell (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{index\+\_\+list,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Make a lcell from given values. 
+
+It uses the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list)
 
 
 \begin{DoxyParams}{Parameters}
@@ -161,12 +183,7 @@ struct lcell$\ast$
 
 
 
-Allocate memory for a llist structure and return the pointer. 
-
-\begin{DoxyReturn}{Returns}
-struct llist$\ast$
-\end{DoxyReturn}
-Allocate memory for a llist structure and return the pointer.
+Allocates memory for a llist structure and returns the pointer. 
 
 \begin{DoxyReturn}{Returns}
 struct llist$\ast$ 
@@ -178,6 +195,19 @@ struct llist$\ast$
 {\footnotesize\ttfamily void print\+\_\+lcell (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$}]{lcell }\end{DoxyParamCaption})}
 
 
+
+Prints the lcell content using a list format \+: ~\newline
+. 
+
+Example of printing \+: ~\newline
+ \mbox{[}A, ~\newline
+ \{ ~\newline
+ \mbox{[}Firstname,Aname,1234\mbox{]}, ~\newline
+ \} ~\newline
+ ,B\mbox{]} ~\newline
+Therefore, it shows the content of the current index letter, the index\+\_\+list and the next index letter.
+
+
 \begin{DoxyParams}{Parameters}
 {\em lcell} & \\
 \hline
@@ -187,6 +217,13 @@ struct llist$\ast$
 \index{print\_llist@{print\_llist}!llist.h@{llist.h}}
 \doxysubsubsection{\texorpdfstring{print\_llist()}{print\_llist()}}
 {\footnotesize\ttfamily void print\+\_\+llist (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structllist}{llist}} $\ast$}]{llst }\end{DoxyParamCaption})}
+
+
+
+Prints the llist using a format like \+: ~\newline
+ \{\{ ~\newline
+ \char`\"{}prints the lcells\char`\"{} ~\newline
+ \}\}. 
 
 
 \begin{DoxyParams}{Parameters}

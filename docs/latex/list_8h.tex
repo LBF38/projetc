@@ -1,19 +1,22 @@
 \hypertarget{list_8h}{}\doxysection{src/list.h File Reference}
 \label{list_8h}\index{src/list.h@{src/list.h}}
+
+
+Defines the \mbox{\hyperlink{list_8c}{list.\+c}} functions and structures.  
+
+
 {\ttfamily \#include $<$stdlib.\+h$>$}\newline
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
 {\ttfamily \#include $<$errno.\+h$>$}\newline
-Include dependency graph for list.\+h\+:
-\nopagebreak
+Include dependency graph for list.\+h\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=342pt]{list_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -24,9 +27,9 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structlist}{list}}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the list structure. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the cell structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
@@ -40,38 +43,40 @@ struct \mbox{\hyperlink{structcell}{cell}}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8h_a43a26d7ecc8fe5c2f3e64c870e5c78fe}{new\+\_\+list}} ()
-\item 
+\begin{DoxyCompactList}\small\item\em Creates and allocates memory for a new list structure and return the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_af6b82cb54067fc24a18ee0dc316d94ef}{free\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
-\item 
+\begin{DoxyCompactList}\small\item\em Free the input list and its cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_ad97a58a73ba9840649125821636c385e}{print\+\_\+cell}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Print a cell as \mbox{[}fname,lname,zip\mbox{]}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_ab6f29267d01cc77330215b1563906366}{print\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
-\item 
+\begin{DoxyCompactList}\small\item\em Print a list and its cells. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8h_adacaa021688ccd065f35b7f65f9cf8f5}{make\+\_\+cell}} (char $\ast$fname, char $\ast$lname, char $\ast$zip)
-\item 
+\begin{DoxyCompactList}\small\item\em Makes a cell from given values and allocates memory accordingly. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8h_ab898857d81674e03439edd78b2f09cc2}{make\+\_\+cell\+\_\+from\+\_\+line}} (char $\ast$line)
-\item 
+\begin{DoxyCompactList}\small\item\em Makes a cell from given line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_abcdfe5d8ddc6b5198dee7519300439f4}{push}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Pushes a cell on top of the given list. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_a4247735ad16c5038d7c2210a3a0816b8}{pop}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$out)
-\item 
+\begin{DoxyCompactList}\small\item\em Pops a cell from the list. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{list_8h_a066ca15ff4ef04b6a4da8c0564f3f881}{compare\+\_\+cells}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$a, struct \mbox{\hyperlink{structcell}{cell}} $\ast$b)
-\item 
+\begin{DoxyCompactList}\small\item\em Compare two cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_ab136cec3a375f0f3e93d4c2d9f03432f}{insert}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\item 
+\begin{DoxyCompactList}\small\item\em Inserts a cell to the given list respecting alphabetical order of names. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8h_ae1a53602948602c5a48a1a0721a2bd4a}{load\+\_\+file}} (char $\ast$file\+\_\+name)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{list_8c}{list.\+c}} functions and structures. 
+
 \begin{DoxyAuthor}{Author}
-Mathis U\+R\+I\+EN (lbf38) 
+Mathis U\+R\+I\+EN (L\+B\+F38) 
 \end{DoxyAuthor}
 \begin{DoxyVersion}{Version}
 1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2022-\/10-\/19
+2022-\/10-\/19 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -84,6 +89,19 @@ Copyright (c) 2022
 \index{compare\_cells@{compare\_cells}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{compare\_cells()}{compare\_cells()}}
 {\footnotesize\ttfamily int compare\+\_\+cells (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{a,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{b }\end{DoxyParamCaption})}
+
+
+
+Compare two cells. 
+
+Outputs \+:
+\begin{DoxyItemize}
+\item -\/1 if a $<$ b,
+\item 0 if equal,
+\item 1 if a $>$ b.
+\end{DoxyItemize}
+
+It firstly compares the last names of each cell and then, if they are equal, it compares the first names.
 
 
 \begin{DoxyParams}{Parameters}
@@ -102,6 +120,10 @@ int
 {\footnotesize\ttfamily void free\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst }\end{DoxyParamCaption})}
 
 
+
+Free the input list and its cells. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em lst} & \\
 \hline
@@ -111,6 +133,18 @@ int
 \index{insert@{insert}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{insert()}{insert()}}
 {\footnotesize\ttfamily void insert (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Inserts a cell to the given list respecting alphabetical order of names. 
+
+There are 4 cases \+:
+\begin{DoxyEnumerate}
+\item the list is empty. We add the cell to the list.
+\item the cell needs to go first. We add the cell to the top of the list.
+\item the cell goes between two elements.
+\item the cell goes at the bottom of the list.
+\end{DoxyEnumerate}
 
 
 \begin{DoxyParams}{Parameters}
@@ -126,6 +160,12 @@ int
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structlist}{list}}$\ast$ load\+\_\+file (\begin{DoxyParamCaption}\item[{char $\ast$}]{file\+\_\+name }\end{DoxyParamCaption})}
 
 
+
+Load the contents of a file in a sorted list. 
+
+Uses the first method. Returns a simple list.
+
+
 \begin{DoxyParams}{Parameters}
 {\em file\+\_\+name} & \\
 \hline
@@ -138,6 +178,10 @@ struct list$\ast$
 \index{make\_cell@{make\_cell}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{make\_cell()}{make\_cell()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structcell}{cell}}$\ast$ make\+\_\+cell (\begin{DoxyParamCaption}\item[{char $\ast$}]{fname,  }\item[{char $\ast$}]{lname,  }\item[{char $\ast$}]{zip }\end{DoxyParamCaption})}
+
+
+
+Makes a cell from given values and allocates memory accordingly. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -158,6 +202,22 @@ struct cell$\ast$
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structcell}{cell}}$\ast$ make\+\_\+cell\+\_\+from\+\_\+line (\begin{DoxyParamCaption}\item[{char $\ast$}]{line }\end{DoxyParamCaption})}
 
 
+
+Makes a cell from given line. 
+
+Lines are formatted like that \+: first\+\_\+name,last\+\_\+name,zipcode;\textbackslash{}n ~\newline
+So, we need to separate the string according to the separator \char`\"{},\char`\"{} and remove the last two characters, which is done by separating the string with \char`\"{};\char`\"{}.
+
+\begin{DoxyWarning}{Warning}
+The string is a single memory space and each value of the cell (fname, lname and zip) points to a part of the string pointer.
+\end{DoxyWarning}
+strtok cuts the given string and replaces the first occurence encountered of the separator by a \textquotesingle{}\textbackslash{}0\textquotesingle{} character to mark the end of the char.
+
+Therefore, when we will want to free the cells value, we only need to free fname because it points to the first character of the whole string.
+
+We can imagine the values like a big box separated in four and where the first three are pointed by fname, lname and zip. The fourth one contains the two last characters we don\textquotesingle{}t want (\char`\"{};\textbackslash{}n\char`\"{} in our case).
+
+
 \begin{DoxyParams}{Parameters}
 {\em line} & \\
 \hline
@@ -171,6 +231,12 @@ struct cell$\ast$
 \doxysubsubsection{\texorpdfstring{new\_list()}{new\_list()}}
 {\footnotesize\ttfamily struct \mbox{\hyperlink{structlist}{list}}$\ast$ new\+\_\+list (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
+
+
+Creates and allocates memory for a new list structure and return the pointer. 
+
+Initialize head to N\+U\+LL.
+
 \begin{DoxyReturn}{Returns}
 struct list$\ast$ 
 \end{DoxyReturn}
@@ -179,6 +245,12 @@ struct list$\ast$
 \index{pop@{pop}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{pop()}{pop()}}
 {\footnotesize\ttfamily void pop (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{out }\end{DoxyParamCaption})}
+
+
+
+Pops a cell from the list. 
+
+Pops the first cell of the list and stores it in the given {\ttfamily out} cell pointer.
 
 
 \begin{DoxyParams}{Parameters}
@@ -194,6 +266,10 @@ struct list$\ast$
 {\footnotesize\ttfamily void print\+\_\+cell (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
 
 
+
+Print a cell as \mbox{[}fname,lname,zip\mbox{]}. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em c} & \\
 \hline
@@ -205,6 +281,10 @@ struct list$\ast$
 {\footnotesize\ttfamily void print\+\_\+list (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst }\end{DoxyParamCaption})}
 
 
+
+Print a list and its cells. 
+
+
 \begin{DoxyParams}{Parameters}
 {\em lst} & \\
 \hline
@@ -214,6 +294,10 @@ struct list$\ast$
 \index{push@{push}!list.h@{list.h}}
 \doxysubsubsection{\texorpdfstring{push()}{push()}}
 {\footnotesize\ttfamily void push (\begin{DoxyParamCaption}\item[{struct \mbox{\hyperlink{structlist}{list}} $\ast$}]{lst,  }\item[{struct \mbox{\hyperlink{structcell}{cell}} $\ast$}]{c }\end{DoxyParamCaption})}
+
+
+
+Pushes a cell on top of the given list. 
 
 
 \begin{DoxyParams}{Parameters}

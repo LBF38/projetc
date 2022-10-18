@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Mathis URIEN (LBF38)
- * @brief This is the main file used to launch the methods for loading files.
+ * @brief This is the main.c file used to launch the methods for loading files.
  * @version 1.0.0
  * @date 2022-10-19
  * 
@@ -9,11 +9,14 @@
  * 
  */
 #include <time.h>
-
 #include "llist.h"
 
 /**
- * @brief 
+ * @brief The main file runs the different methods and measures execution time.
+ * 
+ * It has some options to only measure one method with a file.
+ * @warning The file argument is needed to correctly use the program.
+ * Only options are optional.
  * 
  * @param argc 
  * @param argv 
@@ -113,3 +116,21 @@ int main(int argc, char *argv[])
 
     return 0;
 }
+
+// /**
+//  * @mainpage My Personal Index Page
+//  * 
+//  * @section intro_sec Introduction
+//  * 
+//  * This is the introduction for my C-lang project.
+//  * Here is a table of content of the documentation : @tableofcontents
+//  * 
+//  * @section install_sec Installation
+//  * 
+//  * This is a section about how to install the project.
+//  * 
+//  * @subsection step1 Step 1: Downloading the code.
+//  * 
+//  * blabla...
+//  * 
+//  */
