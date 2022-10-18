@@ -1,0 +1,66 @@
+\@ifundefined {etoctocstyle}{\let \etoc@startlocaltoc \@gobble \let \etoc@settocdepth \@gobble \let \etoc@depthtag \@gobble \let \etoc@setlocaltop \@gobble }{}
+\contentsline {chapter}{\numberline {1}Data Structure Index}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Data Structures}{1}{section.1.1}%
+\contentsline {chapter}{\numberline {2}File Index}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}File List}{3}{section.2.1}%
+\contentsline {chapter}{\numberline {3}Data Structure Documentation}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}cell Struct Reference}{5}{section.3.1}%
+\contentsline {section}{\numberline {3.2}lcell Struct Reference}{6}{section.3.2}%
+\contentsline {section}{\numberline {3.3}list Struct Reference}{6}{section.3.3}%
+\contentsline {section}{\numberline {3.4}llist Struct Reference}{7}{section.3.4}%
+\contentsline {chapter}{\numberline {4}File Documentation}{9}{chapter.4}%
+\contentsline {section}{\numberline {4.1}src/list.c File Reference}{9}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Detailed Description}{10}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Function Documentation}{10}{subsection.4.1.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.1}compare\_cells()}{10}{subsubsection.4.1.2.1}%
+\contentsline {subsubsection}{\numberline {4.1.2.2}free\_list()}{10}{subsubsection.4.1.2.2}%
+\contentsline {subsubsection}{\numberline {4.1.2.3}insert()}{11}{subsubsection.4.1.2.3}%
+\contentsline {subsubsection}{\numberline {4.1.2.4}load\_file()}{11}{subsubsection.4.1.2.4}%
+\contentsline {subsubsection}{\numberline {4.1.2.5}make\_cell()}{11}{subsubsection.4.1.2.5}%
+\contentsline {subsubsection}{\numberline {4.1.2.6}make\_cell\_from\_line()}{12}{subsubsection.4.1.2.6}%
+\contentsline {subsubsection}{\numberline {4.1.2.7}new\_list()}{12}{subsubsection.4.1.2.7}%
+\contentsline {subsubsection}{\numberline {4.1.2.8}pop()}{12}{subsubsection.4.1.2.8}%
+\contentsline {subsubsection}{\numberline {4.1.2.9}print\_cell()}{12}{subsubsection.4.1.2.9}%
+\contentsline {subsubsection}{\numberline {4.1.2.10}print\_list()}{13}{subsubsection.4.1.2.10}%
+\contentsline {subsubsection}{\numberline {4.1.2.11}push()}{13}{subsubsection.4.1.2.11}%
+\contentsline {section}{\numberline {4.2}src/list.h File Reference}{13}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Detailed Description}{15}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Function Documentation}{15}{subsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.1}compare\_cells()}{15}{subsubsection.4.2.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2.2}free\_list()}{16}{subsubsection.4.2.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.2.3}insert()}{16}{subsubsection.4.2.2.3}%
+\contentsline {subsubsection}{\numberline {4.2.2.4}load\_file()}{16}{subsubsection.4.2.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.2.5}make\_cell()}{16}{subsubsection.4.2.2.5}%
+\contentsline {subsubsection}{\numberline {4.2.2.6}make\_cell\_from\_line()}{17}{subsubsection.4.2.2.6}%
+\contentsline {subsubsection}{\numberline {4.2.2.7}new\_list()}{17}{subsubsection.4.2.2.7}%
+\contentsline {subsubsection}{\numberline {4.2.2.8}pop()}{17}{subsubsection.4.2.2.8}%
+\contentsline {subsubsection}{\numberline {4.2.2.9}print\_cell()}{18}{subsubsection.4.2.2.9}%
+\contentsline {subsubsection}{\numberline {4.2.2.10}print\_list()}{18}{subsubsection.4.2.2.10}%
+\contentsline {subsubsection}{\numberline {4.2.2.11}push()}{18}{subsubsection.4.2.2.11}%
+\contentsline {section}{\numberline {4.3}src/llist.c File Reference}{18}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Detailed Description}{20}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Function Documentation}{20}{subsection.4.3.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.1}compare\_lcells()}{20}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {4.3.2.2}free\_llist()}{20}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {4.3.2.3}insert\_optimized()}{21}{subsubsection.4.3.2.3}%
+\contentsline {subsubsection}{\numberline {4.3.2.4}load\_file\_optimized()}{21}{subsubsection.4.3.2.4}%
+\contentsline {subsubsection}{\numberline {4.3.2.5}make\_lcell()}{21}{subsubsection.4.3.2.5}%
+\contentsline {subsubsection}{\numberline {4.3.2.6}new\_llist()}{22}{subsubsection.4.3.2.6}%
+\contentsline {subsubsection}{\numberline {4.3.2.7}print\_lcell()}{22}{subsubsection.4.3.2.7}%
+\contentsline {subsubsection}{\numberline {4.3.2.8}print\_llist()}{22}{subsubsection.4.3.2.8}%
+\contentsline {section}{\numberline {4.4}src/llist.h File Reference}{23}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Detailed Description}{24}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Function Documentation}{24}{subsection.4.4.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.1}compare\_lcells()}{25}{subsubsection.4.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.4.2.2}free\_llist()}{26}{subsubsection.4.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.4.2.3}insert\_optimized()}{26}{subsubsection.4.4.2.3}%
+\contentsline {subsubsection}{\numberline {4.4.2.4}load\_file\_optimized()}{26}{subsubsection.4.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.4.2.5}make\_lcell()}{27}{subsubsection.4.4.2.5}%
+\contentsline {subsubsection}{\numberline {4.4.2.6}new\_llist()}{27}{subsubsection.4.4.2.6}%
+\contentsline {subsubsection}{\numberline {4.4.2.7}print\_lcell()}{28}{subsubsection.4.4.2.7}%
+\contentsline {subsubsection}{\numberline {4.4.2.8}print\_llist()}{28}{subsubsection.4.4.2.8}%
+\contentsline {section}{\numberline {4.5}src/main.c File Reference}{28}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}Detailed Description}{29}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}Function Documentation}{30}{subsection.4.5.2}%
+\contentsline {subsubsection}{\numberline {4.5.2.1}main()}{30}{subsubsection.4.5.2.1}%
+\contentsline {chapter}{Index}{33}{section*.24}%

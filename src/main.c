@@ -1,7 +1,7 @@
 /**
  * @file main.c
  * @author Mathis URIEN (LBF38)
- * @brief This is the main file used to launch the methods for loading files.
+ * @brief This is the main.c file used to launch the methods for loading files.
  * @version 1.0.0
  * @date 2022-10-19
  * 
