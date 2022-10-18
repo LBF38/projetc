@@ -1,7 +1,7 @@
 {
     "files.associations": {
         "typeinfo": "c",
-        "*.tcc": "c",
+        "llist.h": "c",
         "llist.h": "c",
         "list.h": "c"
     }
