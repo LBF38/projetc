@@ -6,8 +6,7 @@ This is the \mbox{\hyperlink{list_8c}{list.\+c}} file.
 
 
 {\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
-Include dependency graph for list.\+c\+:
-\nopagebreak
+Include dependency graph for list.\+c\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -18,27 +17,27 @@ Include dependency graph for list.\+c\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8c_a43a26d7ecc8fe5c2f3e64c870e5c78fe}{new\+\_\+list}} ()
-\begin{DoxyCompactList}\small\item\em Creates and allocates memory for a new list structure. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates and allocates memory for a new list structure and return the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_af6b82cb54067fc24a18ee0dc316d94ef}{free\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
-\begin{DoxyCompactList}\small\item\em Frees the complete list and its pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Free the input list and its cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_ad97a58a73ba9840649125821636c385e}{print\+\_\+cell}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Prints a cell as \mbox{[}fname,lname,zip\mbox{]}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Print a cell as \mbox{[}fname,lname,zip\mbox{]}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_ab6f29267d01cc77330215b1563906366}{print\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
-\begin{DoxyCompactList}\small\item\em Prints a list and its cells. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Print a list and its cells. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8c_adacaa021688ccd065f35b7f65f9cf8f5}{make\+\_\+cell}} (char $\ast$fname, char $\ast$lname, char $\ast$zip)
-\begin{DoxyCompactList}\small\item\em Makes a cell and allocates memory accordingly. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Makes a cell from given values and allocates memory accordingly. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_abcdfe5d8ddc6b5198dee7519300439f4}{push}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Pushes a cell to the given list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Pushes a cell on top of the given list. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_a4247735ad16c5038d7c2210a3a0816b8}{pop}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$out)
 \begin{DoxyCompactList}\small\item\em Pops a cell from the list. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8c_ab898857d81674e03439edd78b2f09cc2}{make\+\_\+cell\+\_\+from\+\_\+line}} (char $\ast$line)
 \begin{DoxyCompactList}\small\item\em Makes a cell from given line. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8c_ae1a53602948602c5a48a1a0721a2bd4a}{load\+\_\+file}} (char $\ast$file\+\_\+name)
-\begin{DoxyCompactList}\small\item\em Loads the file using the first method. Returns a simple list. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{list_8c_a066ca15ff4ef04b6a4da8c0564f3f881}{compare\+\_\+cells}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$a, struct \mbox{\hyperlink{structcell}{cell}} $\ast$b)
-\begin{DoxyCompactList}\small\item\em Compares simple cells by last names and then by first names. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compare two cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8c_ab136cec3a375f0f3e93d4c2d9f03432f}{insert}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Inserts a cell to the given list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Inserts a cell to the given list respecting alphabetical order of names. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -67,11 +66,16 @@ Copyright (c) 2022
 
 
 
-Compares simple cells by last names and then by first names. 
+Compare two cells. 
 
-Compare two cells.
+Outputs \+:
+\begin{DoxyItemize}
+\item -\/1 if a $<$ b,
+\item 0 if equal,
+\item 1 if a $>$ b.
+\end{DoxyItemize}
 
-It firstly compares last names. If equal, it compares the first names.
+It firstly compares the last names of each cell and then, if they are equal, it compares the first names.
 
 
 \begin{DoxyParams}{Parameters}
@@ -91,9 +95,7 @@ int
 
 
 
-Frees the complete list and its pointer. 
-
-Free the input list and its cells.
+Free the input list and its cells. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -108,9 +110,7 @@ Free the input list and its cells.
 
 
 
-Inserts a cell to the given list. 
-
-Add the cell to the list respecting alphabetical order of names/lnames.
+Inserts a cell to the given list respecting alphabetical order of names. 
 
 There are 4 cases \+:
 \begin{DoxyEnumerate}
@@ -135,9 +135,9 @@ There are 4 cases \+:
 
 
 
-Loads the file using the first method. Returns a simple list. 
+Load the contents of a file in a sorted list. 
 
-Load the contents of a file in a sorted list.
+Uses the first method. Returns a simple list.
 
 
 \begin{DoxyParams}{Parameters}
@@ -155,9 +155,7 @@ struct list$\ast$
 
 
 
-Makes a cell and allocates memory accordingly. 
-
-Make a cell from given values.
+Makes a cell from given values and allocates memory accordingly. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -180,8 +178,6 @@ struct cell$\ast$
 
 
 Makes a cell from given line. 
-
-Make a cell from an input text line.
 
 Lines are formatted like that \+: first\+\_\+name,last\+\_\+name,zipcode;\textbackslash{}n ~\newline
 So, we need to separate the string according to the separator \char`\"{},\char`\"{} and remove the last two characters, which is done by separating the string with \char`\"{};\char`\"{}.
@@ -211,9 +207,7 @@ struct cell$\ast$
 
 
 
-Creates and allocates memory for a new list structure. 
-
-Allocate memory for a list structure and return the pointer.
+Creates and allocates memory for a new list structure and return the pointer. 
 
 Initialize head to N\+U\+LL.
 
@@ -229,8 +223,6 @@ struct list$\ast$
 
 
 Pops a cell from the list. 
-
-Pop the head of the list in the given out pointer.
 
 Pops the first cell of the list and stores it in the given {\ttfamily out} cell pointer.
 
@@ -249,9 +241,7 @@ Pops the first cell of the list and stores it in the given {\ttfamily out} cell 
 
 
 
-Prints a cell as \mbox{[}fname,lname,zip\mbox{]}. 
-
-Print a cell as \mbox{[}fname,lname,zip\mbox{]}.
+Print a cell as \mbox{[}fname,lname,zip\mbox{]}. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -266,9 +256,7 @@ Print a cell as \mbox{[}fname,lname,zip\mbox{]}.
 
 
 
-Prints a list and its cells. 
-
-Print a list and its cells.
+Print a list and its cells. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -283,9 +271,7 @@ Print a list and its cells.
 
 
 
-Pushes a cell to the given list. 
-
-Push a cell on top.
+Pushes a cell on top of the given list. 
 
 
 \begin{DoxyParams}{Parameters}

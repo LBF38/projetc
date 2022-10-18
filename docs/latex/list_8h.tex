@@ -16,8 +16,7 @@ Include dependency graph for list.\+h\+:\nopagebreak
 \includegraphics[width=342pt]{list_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -44,7 +43,7 @@ struct \mbox{\hyperlink{structcell}{cell}}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8h_a43a26d7ecc8fe5c2f3e64c870e5c78fe}{new\+\_\+list}} ()
-\begin{DoxyCompactList}\small\item\em Allocate memory for a list structure and return the pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Creates and allocates memory for a new list structure and return the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_af6b82cb54067fc24a18ee0dc316d94ef}{free\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
 \begin{DoxyCompactList}\small\item\em Free the input list and its cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_ad97a58a73ba9840649125821636c385e}{print\+\_\+cell}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
@@ -52,17 +51,17 @@ void \mbox{\hyperlink{list_8h_ad97a58a73ba9840649125821636c385e}{print\+\_\+cell
 void \mbox{\hyperlink{list_8h_ab6f29267d01cc77330215b1563906366}{print\+\_\+list}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst)
 \begin{DoxyCompactList}\small\item\em Print a list and its cells. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8h_adacaa021688ccd065f35b7f65f9cf8f5}{make\+\_\+cell}} (char $\ast$fname, char $\ast$lname, char $\ast$zip)
-\begin{DoxyCompactList}\small\item\em Make a cell from given values. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Makes a cell from given values and allocates memory accordingly. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structcell}{cell}} $\ast$ \mbox{\hyperlink{list_8h_ab898857d81674e03439edd78b2f09cc2}{make\+\_\+cell\+\_\+from\+\_\+line}} (char $\ast$line)
-\begin{DoxyCompactList}\small\item\em Make a cell from an input text line. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Makes a cell from given line. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_abcdfe5d8ddc6b5198dee7519300439f4}{push}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Push a cell on top. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Pushes a cell on top of the given list. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_a4247735ad16c5038d7c2210a3a0816b8}{pop}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$out)
-\begin{DoxyCompactList}\small\item\em Pop the head of the list in the given out pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Pops a cell from the list. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{list_8h_a066ca15ff4ef04b6a4da8c0564f3f881}{compare\+\_\+cells}} (struct \mbox{\hyperlink{structcell}{cell}} $\ast$a, struct \mbox{\hyperlink{structcell}{cell}} $\ast$b)
 \begin{DoxyCompactList}\small\item\em Compare two cells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{list_8h_ab136cec3a375f0f3e93d4c2d9f03432f}{insert}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$lst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Add the cell to the list respecting alphabetical order of names/lnames. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts a cell to the given list respecting alphabetical order of names. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlist}{list}} $\ast$ \mbox{\hyperlink{list_8h_ae1a53602948602c5a48a1a0721a2bd4a}{load\+\_\+file}} (char $\ast$file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -112,20 +111,6 @@ It firstly compares the last names of each cell and then, if they are equal, it 
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-Compare two cells.
-
-It firstly compares last names. If equal, it compares the first names.
-
-
-\begin{DoxyParams}{Parameters}
-{\em a} & \\
-\hline
-{\em b} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
 int 
 \end{DoxyReturn}
 \mbox{\Hypertarget{list_8h_af6b82cb54067fc24a18ee0dc316d94ef}\label{list_8h_af6b82cb54067fc24a18ee0dc316d94ef}} 
@@ -143,13 +128,6 @@ Free the input list and its cells.
 {\em lst} & \\
 \hline
 \end{DoxyParams}
-Free the input list and its cells.
-
-
-\begin{DoxyParams}{Parameters}
-{\em lst} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{list_8h_ab136cec3a375f0f3e93d4c2d9f03432f}\label{list_8h_ab136cec3a375f0f3e93d4c2d9f03432f}} 
 \index{list.h@{list.h}!insert@{insert}}
 \index{insert@{insert}!list.h@{list.h}}
@@ -158,16 +136,7 @@ Free the input list and its cells.
 
 
 
-Add the cell to the list respecting alphabetical order of names/lnames. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lst} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-Add the cell to the list respecting alphabetical order of names/lnames.
+Inserts a cell to the given list respecting alphabetical order of names. 
 
 There are 4 cases \+:
 \begin{DoxyEnumerate}
@@ -194,15 +163,7 @@ There are 4 cases \+:
 
 Load the contents of a file in a sorted list. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em file\+\_\+name} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-struct list$\ast$
-\end{DoxyReturn}
-Load the contents of a file in a sorted list.
+Uses the first method. Returns a simple list.
 
 
 \begin{DoxyParams}{Parameters}
@@ -220,21 +181,7 @@ struct list$\ast$
 
 
 
-Make a cell from given values. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em fname} & \\
-\hline
-{\em lname} & \\
-\hline
-{\em zip} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-struct cell$\ast$
-\end{DoxyReturn}
-Make a cell from given values.
+Makes a cell from given values and allocates memory accordingly. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -256,17 +203,7 @@ struct cell$\ast$
 
 
 
-Make a cell from an input text line. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em line} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-struct cell$\ast$
-\end{DoxyReturn}
-Make a cell from an input text line.
+Makes a cell from given line. 
 
 Lines are formatted like that \+: first\+\_\+name,last\+\_\+name,zipcode;\textbackslash{}n ~\newline
 So, we need to separate the string according to the separator \char`\"{},\char`\"{} and remove the last two characters, which is done by separating the string with \char`\"{};\char`\"{}.
@@ -296,12 +233,7 @@ struct cell$\ast$
 
 
 
-Allocate memory for a list structure and return the pointer. 
-
-\begin{DoxyReturn}{Returns}
-struct list$\ast$
-\end{DoxyReturn}
-Allocate memory for a list structure and return the pointer.
+Creates and allocates memory for a new list structure and return the pointer. 
 
 Initialize head to N\+U\+LL.
 
@@ -316,16 +248,7 @@ struct list$\ast$
 
 
 
-Pop the head of the list in the given out pointer. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lst} & \\
-\hline
-{\em out} & \\
-\hline
-\end{DoxyParams}
-Pop the head of the list in the given out pointer.
+Pops a cell from the list. 
 
 Pops the first cell of the list and stores it in the given {\ttfamily out} cell pointer.
 
@@ -351,13 +274,6 @@ Print a cell as \mbox{[}fname,lname,zip\mbox{]}.
 {\em c} & \\
 \hline
 \end{DoxyParams}
-Print a cell as \mbox{[}fname,lname,zip\mbox{]}.
-
-
-\begin{DoxyParams}{Parameters}
-{\em c} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{list_8h_ab6f29267d01cc77330215b1563906366}\label{list_8h_ab6f29267d01cc77330215b1563906366}} 
 \index{list.h@{list.h}!print\_list@{print\_list}}
 \index{print\_list@{print\_list}!list.h@{list.h}}
@@ -373,13 +289,6 @@ Print a list and its cells.
 {\em lst} & \\
 \hline
 \end{DoxyParams}
-Print a list and its cells.
-
-
-\begin{DoxyParams}{Parameters}
-{\em lst} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{list_8h_abcdfe5d8ddc6b5198dee7519300439f4}\label{list_8h_abcdfe5d8ddc6b5198dee7519300439f4}} 
 \index{list.h@{list.h}!push@{push}}
 \index{push@{push}!list.h@{list.h}}
@@ -388,16 +297,7 @@ Print a list and its cells.
 
 
 
-Push a cell on top. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lst} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-Push a cell on top.
+Pushes a cell on top of the given list. 
 
 
 \begin{DoxyParams}{Parameters}

@@ -129,7 +129,7 @@ Macros</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a43a26d7ecc8fe5c2f3e64c870e5c78fe"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a43a26d7ecc8fe5c2f3e64c870e5c78fe">new_list</a> ()</td></tr>
-<tr class="memdesc:a43a26d7ecc8fe5c2f3e64c870e5c78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate memory for a list structure and return the pointer.  <a href="list_8h.html#a43a26d7ecc8fe5c2f3e64c870e5c78fe">More...</a><br /></td></tr>
+<tr class="memdesc:a43a26d7ecc8fe5c2f3e64c870e5c78fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and allocates memory for a new list structure and return the pointer.  <a href="list_8h.html#a43a26d7ecc8fe5c2f3e64c870e5c78fe">More...</a><br /></td></tr>
 <tr class="separator:a43a26d7ecc8fe5c2f3e64c870e5c78fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af6b82cb54067fc24a18ee0dc316d94ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#af6b82cb54067fc24a18ee0dc316d94ef">free_list</a> (struct <a class="el" href="structlist.html">list</a> *lst)</td></tr>
 <tr class="memdesc:af6b82cb54067fc24a18ee0dc316d94ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the input list and its cells.  <a href="list_8h.html#af6b82cb54067fc24a18ee0dc316d94ef">More...</a><br /></td></tr>
@@ -141,22 +141,22 @@ Functions</h2></td></tr>
 <tr class="memdesc:ab6f29267d01cc77330215b1563906366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a list and its cells.  <a href="list_8h.html#ab6f29267d01cc77330215b1563906366">More...</a><br /></td></tr>
 <tr class="separator:ab6f29267d01cc77330215b1563906366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adacaa021688ccd065f35b7f65f9cf8f5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structcell.html">cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#adacaa021688ccd065f35b7f65f9cf8f5">make_cell</a> (char *fname, char *lname, char *zip)</td></tr>
-<tr class="memdesc:adacaa021688ccd065f35b7f65f9cf8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a cell from given values.  <a href="list_8h.html#adacaa021688ccd065f35b7f65f9cf8f5">More...</a><br /></td></tr>
+<tr class="memdesc:adacaa021688ccd065f35b7f65f9cf8f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a cell from given values and allocates memory accordingly.  <a href="list_8h.html#adacaa021688ccd065f35b7f65f9cf8f5">More...</a><br /></td></tr>
 <tr class="separator:adacaa021688ccd065f35b7f65f9cf8f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab898857d81674e03439edd78b2f09cc2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structcell.html">cell</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ab898857d81674e03439edd78b2f09cc2">make_cell_from_line</a> (char *line)</td></tr>
-<tr class="memdesc:ab898857d81674e03439edd78b2f09cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Make a cell from an input text line.  <a href="list_8h.html#ab898857d81674e03439edd78b2f09cc2">More...</a><br /></td></tr>
+<tr class="memdesc:ab898857d81674e03439edd78b2f09cc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Makes a cell from given line.  <a href="list_8h.html#ab898857d81674e03439edd78b2f09cc2">More...</a><br /></td></tr>
 <tr class="separator:ab898857d81674e03439edd78b2f09cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcdfe5d8ddc6b5198dee7519300439f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#abcdfe5d8ddc6b5198dee7519300439f4">push</a> (struct <a class="el" href="structlist.html">list</a> *lst, struct <a class="el" href="structcell.html">cell</a> *c)</td></tr>
-<tr class="memdesc:abcdfe5d8ddc6b5198dee7519300439f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Push a cell on top.  <a href="list_8h.html#abcdfe5d8ddc6b5198dee7519300439f4">More...</a><br /></td></tr>
+<tr class="memdesc:abcdfe5d8ddc6b5198dee7519300439f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pushes a cell on top of the given list.  <a href="list_8h.html#abcdfe5d8ddc6b5198dee7519300439f4">More...</a><br /></td></tr>
 <tr class="separator:abcdfe5d8ddc6b5198dee7519300439f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4247735ad16c5038d7c2210a3a0816b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a4247735ad16c5038d7c2210a3a0816b8">pop</a> (struct <a class="el" href="structlist.html">list</a> *lst, struct <a class="el" href="structcell.html">cell</a> *out)</td></tr>
-<tr class="memdesc:a4247735ad16c5038d7c2210a3a0816b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pop the head of the list in the given out pointer.  <a href="list_8h.html#a4247735ad16c5038d7c2210a3a0816b8">More...</a><br /></td></tr>
+<tr class="memdesc:a4247735ad16c5038d7c2210a3a0816b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pops a cell from the list.  <a href="list_8h.html#a4247735ad16c5038d7c2210a3a0816b8">More...</a><br /></td></tr>
 <tr class="separator:a4247735ad16c5038d7c2210a3a0816b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a066ca15ff4ef04b6a4da8c0564f3f881"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#a066ca15ff4ef04b6a4da8c0564f3f881">compare_cells</a> (struct <a class="el" href="structcell.html">cell</a> *a, struct <a class="el" href="structcell.html">cell</a> *b)</td></tr>
 <tr class="memdesc:a066ca15ff4ef04b6a4da8c0564f3f881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two cells.  <a href="list_8h.html#a066ca15ff4ef04b6a4da8c0564f3f881">More...</a><br /></td></tr>
 <tr class="separator:a066ca15ff4ef04b6a4da8c0564f3f881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab136cec3a375f0f3e93d4c2d9f03432f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ab136cec3a375f0f3e93d4c2d9f03432f">insert</a> (struct <a class="el" href="structlist.html">list</a> *lst, struct <a class="el" href="structcell.html">cell</a> *c)</td></tr>
-<tr class="memdesc:ab136cec3a375f0f3e93d4c2d9f03432f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add the cell to the list respecting alphabetical order of names/lnames.  <a href="list_8h.html#ab136cec3a375f0f3e93d4c2d9f03432f">More...</a><br /></td></tr>
+<tr class="memdesc:ab136cec3a375f0f3e93d4c2d9f03432f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserts a cell to the given list respecting alphabetical order of names.  <a href="list_8h.html#ab136cec3a375f0f3e93d4c2d9f03432f">More...</a><br /></td></tr>
 <tr class="separator:ab136cec3a375f0f3e93d4c2d9f03432f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1a53602948602c5a48a1a0721a2bd4a"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="structlist.html">list</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="list_8h.html#ae1a53602948602c5a48a1a0721a2bd4a">load_file</a> (char *file_name)</td></tr>
 <tr class="memdesc:ae1a53602948602c5a48a1a0721a2bd4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the contents of a file in a sorted list.  <a href="list_8h.html#ae1a53602948602c5a48a1a0721a2bd4a">More...</a><br /></td></tr>
@@ -209,16 +209,6 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int</dd></dl>
-<p>Compare two cells.</p>
-<p>It firstly compares last names. If equal, it compares the first names.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
-    <tr><td class="paramname">b</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 <dl class="section return"><dt>Returns</dt><dd>int </dd></dl>
 
 </div>
@@ -240,13 +230,6 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Free the input list and its cells. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Free the input list and its cells.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lst</td><td></td></tr>
@@ -282,15 +265,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Add the cell to the list respecting alphabetical order of names/lnames. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td></td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Add the cell to the list respecting alphabetical order of names/lnames.</p>
+<p>Inserts a cell to the given list respecting alphabetical order of names. </p>
 <p>There are 4 cases :</p><ol type="1">
 <li>the list is empty. We add the cell to the list.</li>
 <li>the cell needs to go first. We add the cell to the top of the list.</li>
@@ -324,14 +299,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Load the contents of a file in a sorted list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">file_name</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct list*</dd></dl>
-<p>Load the contents of a file in a sorted list.</p>
+<p>Uses the first method. Returns a simple list.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">file_name</td><td></td></tr>
@@ -374,17 +342,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Make a cell from given values. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">fname</td><td></td></tr>
-    <tr><td class="paramname">lname</td><td></td></tr>
-    <tr><td class="paramname">zip</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct cell*</dd></dl>
-<p>Make a cell from given values.</p>
+<p>Makes a cell from given values and allocates memory accordingly. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">fname</td><td></td></tr>
@@ -413,15 +371,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Make a cell from an input text line. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">line</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>struct cell*</dd></dl>
-<p>Make a cell from an input text line.</p>
+<p>Makes a cell from given line. </p>
 <p>Lines are formatted like that : first_name,last_name,zipcode;\n <br  />
 So, we need to separate the string according to the separator "," and remove the last two characters, which is done by separating the string with ";".</p>
 <dl class="section warning"><dt>Warning</dt><dd>The string is a single memory space and each value of the cell (fname, lname and zip) points to a part of the string pointer.</dd></dl>
@@ -453,9 +403,7 @@ So, we need to separate the string according to the separator "," and remove the
       </table>
 </div><div class="memdoc">
 
-<p>Allocate memory for a list structure and return the pointer. </p>
-<dl class="section return"><dt>Returns</dt><dd>struct list*</dd></dl>
-<p>Allocate memory for a list structure and return the pointer.</p>
+<p>Creates and allocates memory for a new list structure and return the pointer. </p>
 <p>Initialize head to NULL.</p>
 <dl class="section return"><dt>Returns</dt><dd>struct list* </dd></dl>
 
@@ -487,15 +435,7 @@ So, we need to separate the string according to the separator "," and remove the
       </table>
 </div><div class="memdoc">
 
-<p>Pop the head of the list in the given out pointer. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td></td></tr>
-    <tr><td class="paramname">out</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Pop the head of the list in the given out pointer.</p>
+<p>Pops a cell from the list. </p>
 <p>Pops the first cell of the list and stores it in the given <code>out</code> cell pointer.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -530,13 +470,6 @@ So, we need to separate the string according to the separator "," and remove the
   </table>
   </dd>
 </dl>
-<p>Print a cell as [fname,lname,zip].</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">c</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
 
 </div>
 </div>
@@ -557,13 +490,6 @@ So, we need to separate the string according to the separator "," and remove the
 </div><div class="memdoc">
 
 <p>Print a list and its cells. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Print a list and its cells.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lst</td><td></td></tr>
@@ -599,15 +525,7 @@ So, we need to separate the string according to the separator "," and remove the
       </table>
 </div><div class="memdoc">
 
-<p>Push a cell on top. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">lst</td><td></td></tr>
-    <tr><td class="paramname">c</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Push a cell on top.</p>
+<p>Pushes a cell on top of the given list. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lst</td><td></td></tr>

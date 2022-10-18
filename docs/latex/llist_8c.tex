@@ -17,9 +17,9 @@ Include dependency graph for llist.\+c\+:\nopagebreak
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8c_ac3312899610c4946aa78c6e99af92b23}{new\+\_\+llist}} ()
-\begin{DoxyCompactList}\small\item\em new\+\_\+llist allocates memory for a new llist and returns its pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Allocates memory for a llist structure and returns the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8c_a4d4fa25c2d14a70d9f31eef16cc819c2}{free\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\begin{DoxyCompactList}\small\item\em Frees the llist by calling free\+\_\+lcells and then frees the llist pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Free the input llist and its lcells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8c_a96127e0a9c39f8d657dde212214cf88f}{print\+\_\+lcell}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$\mbox{\hyperlink{structlcell}{lcell}})
 \begin{DoxyCompactList}\small\item\em Prints the lcell content using a list format \+: ~\newline
 . \end{DoxyCompactList}\item 
@@ -29,15 +29,13 @@ void \mbox{\hyperlink{llist_8c_a7f46cc6c338760115d1096566310fbd2}{print\+\_\+lli
  \char`\"{}prints the lcells\char`\"{} ~\newline
  \}\}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$ \mbox{\hyperlink{llist_8c_a9b1ec25598a2a26e6fdbdf25d61e9627}{make\+\_\+lcell}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$index\+\_\+list, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Creates a lcell. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Make a lcell from given values. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{llist_8c_a64261cf1996904870fbbbe55043465ca}{compare\+\_\+lcells}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$lcellule, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
 \begin{DoxyCompactList}\small\item\em Compares the cellule we want to insert with the index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8c_a3f8aca215d77a4be6f43852ced804dda}{insert\+\_\+optimized}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Inserts the cell in the optimized llist. It compares the cell we want to insert with the index letters and then insert it in the right place. ~\newline
- There are 4 cases \+: ~\newline
-. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the cell in the optimized llist. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8c_aee0668a70cd72ccf3c2e23e663d1a447}{load\+\_\+file\+\_\+optimized}} (char $\ast$file\+\_\+name)
-\begin{DoxyCompactList}\small\item\em Loads the file, creates cells with each line and insert it into the llist. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -68,8 +66,6 @@ Copyright (c) 2022
 
 Compares the cellule we want to insert with the index. 
 
-Compare cells to the index to insert it to the right place.
-
 
 \begin{DoxyParams}{Parameters}
 {\em lcellule} & \\
@@ -88,9 +84,7 @@ int
 
 
 
-Frees the llist by calling free\+\_\+lcells and then frees the llist pointer. 
-
-Free the input llist and its lcells.
+Free the input llist and its lcells. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -105,12 +99,11 @@ Free the input llist and its lcells.
 
 
 
-Inserts the cell in the optimized llist. It compares the cell we want to insert with the index letters and then insert it in the right place. ~\newline
- There are 4 cases \+: ~\newline
-. 
+Inserts the cell in the optimized llist. 
 
-Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist.
+It compares the cell we want to insert with the index letters and then insert it in the right place.
 
+There are 4 cases \+: ~\newline
 
 \begin{DoxyItemize}
 \item the list is empty.
@@ -134,9 +127,9 @@ Add the cell to the llist respecting alphabetical order of names/lnames and inse
 
 
 
-Loads the file, creates cells with each line and insert it into the llist. 
+Load the contents of a file in a sorted list. 
 
-Load the contents of a file in a sorted list.
+Loads the file, creates cells with each line and insert it into the llist.
 
 
 \begin{DoxyParams}{Parameters}
@@ -154,9 +147,7 @@ struct llist$\ast$
 
 
 
-Creates a lcell. 
-
-Make a lcell from given values.
+Make a lcell from given values. 
 
 It uses the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list)
 
@@ -178,9 +169,7 @@ struct lcell$\ast$
 
 
 
-new\+\_\+llist allocates memory for a new llist and returns its pointer. 
-
-Allocate memory for a llist structure and return the pointer.
+Allocates memory for a llist structure and returns the pointer. 
 
 \begin{DoxyReturn}{Returns}
 struct llist$\ast$ 
@@ -195,8 +184,6 @@ struct llist$\ast$
 
 Prints the lcell content using a list format \+: ~\newline
 . 
-
-Print a lcell as \mbox{[}fname,lname,zip\mbox{]}.
 
 Example of printing \+: ~\newline
  \mbox{[}A, ~\newline
@@ -223,8 +210,6 @@ Prints the llist using a format like \+: ~\newline
  \{\{ ~\newline
  \char`\"{}prints the lcells\char`\"{} ~\newline
  \}\}. 
-
-Print a llist and its lcells.
 
 
 \begin{DoxyParams}{Parameters}

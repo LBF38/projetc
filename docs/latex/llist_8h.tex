@@ -31,19 +31,23 @@ struct \mbox{\hyperlink{structlcell}{lcell}}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_ac3312899610c4946aa78c6e99af92b23}{new\+\_\+llist}} ()
-\begin{DoxyCompactList}\small\item\em Allocate memory for a llist structure and return the pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Allocates memory for a llist structure and returns the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a4d4fa25c2d14a70d9f31eef16cc819c2}{free\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
 \begin{DoxyCompactList}\small\item\em Free the input llist and its lcells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a96127e0a9c39f8d657dde212214cf88f}{print\+\_\+lcell}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$\mbox{\hyperlink{structlcell}{lcell}})
-\begin{DoxyCompactList}\small\item\em Print a lcell as \mbox{[}fname,lname,zip\mbox{]}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Prints the lcell content using a list format \+: ~\newline
+. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a7f46cc6c338760115d1096566310fbd2}{print\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\begin{DoxyCompactList}\small\item\em Print a llist and its lcells. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Prints the llist using a format like \+: ~\newline
+ \{\{ ~\newline
+ \char`\"{}prints the lcells\char`\"{} ~\newline
+ \}\}. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$ \mbox{\hyperlink{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}{make\+\_\+lcell}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$index\+\_\+list, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
 \begin{DoxyCompactList}\small\item\em Make a lcell from given values. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{llist_8h_a64261cf1996904870fbbbe55043465ca}{compare\+\_\+lcells}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$lcellule, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Compare cells to the index to insert it to the right place. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Compares the cellule we want to insert with the index. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a3f8aca215d77a4be6f43852ced804dda}{insert\+\_\+optimized}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Inserts the cell in the optimized llist. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_aee0668a70cd72ccf3c2e23e663d1a447}{load\+\_\+file\+\_\+optimized}} (char $\ast$file\+\_\+name)
 \begin{DoxyCompactList}\small\item\em Load the contents of a file in a sorted list. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
@@ -74,19 +78,7 @@ Copyright (c) 2022
 
 
 
-Compare cells to the index to insert it to the right place. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lcellule} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-int
-\end{DoxyReturn}
-Compare cells to the index to insert it to the right place.
+Compares the cellule we want to insert with the index. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -113,13 +105,6 @@ Free the input llist and its lcells.
 {\em llst} & \\
 \hline
 \end{DoxyParams}
-Free the input llist and its lcells.
-
-
-\begin{DoxyParams}{Parameters}
-{\em llst} & \\
-\hline
-\end{DoxyParams}
 \mbox{\Hypertarget{llist_8h_a3f8aca215d77a4be6f43852ced804dda}\label{llist_8h_a3f8aca215d77a4be6f43852ced804dda}} 
 \index{llist.h@{llist.h}!insert\_optimized@{insert\_optimized}}
 \index{insert\_optimized@{insert\_optimized}!llist.h@{llist.h}}
@@ -128,17 +113,11 @@ Free the input llist and its lcells.
 
 
 
-Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist. 
+Inserts the cell in the optimized llist. 
 
+It compares the cell we want to insert with the index letters and then insert it in the right place.
 
-\begin{DoxyParams}{Parameters}
-{\em llst} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-Add the cell to the llist respecting alphabetical order of names/lnames and inserting into the right index to optimize the llist.
-
+There are 4 cases \+: ~\newline
 
 \begin{DoxyItemize}
 \item the list is empty.
@@ -164,15 +143,7 @@ Add the cell to the llist respecting alphabetical order of names/lnames and inse
 
 Load the contents of a file in a sorted list. 
 
-
-\begin{DoxyParams}{Parameters}
-{\em file\+\_\+name} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-struct llist$\ast$
-\end{DoxyReturn}
-Load the contents of a file in a sorted list.
+Loads the file, creates cells with each line and insert it into the llist.
 
 
 \begin{DoxyParams}{Parameters}
@@ -191,18 +162,6 @@ struct llist$\ast$
 
 
 Make a lcell from given values. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em index\+\_\+list} & \\
-\hline
-{\em c} & \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-struct lcell$\ast$
-\end{DoxyReturn}
-Make a lcell from given values.
 
 It uses the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list)
 
@@ -224,12 +183,7 @@ struct lcell$\ast$
 
 
 
-Allocate memory for a llist structure and return the pointer. 
-
-\begin{DoxyReturn}{Returns}
-struct llist$\ast$
-\end{DoxyReturn}
-Allocate memory for a llist structure and return the pointer.
+Allocates memory for a llist structure and returns the pointer. 
 
 \begin{DoxyReturn}{Returns}
 struct llist$\ast$ 
@@ -242,14 +196,8 @@ struct llist$\ast$
 
 
 
-Print a lcell as \mbox{[}fname,lname,zip\mbox{]}. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em lcell} & \\
-\hline
-\end{DoxyParams}
-Print a lcell as \mbox{[}fname,lname,zip\mbox{]}.
+Prints the lcell content using a list format \+: ~\newline
+. 
 
 Example of printing \+: ~\newline
  \mbox{[}A, ~\newline
@@ -272,14 +220,10 @@ Therefore, it shows the content of the current index letter, the index\+\_\+list
 
 
 
-Print a llist and its lcells. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em llst} & \\
-\hline
-\end{DoxyParams}
-Print a llist and its lcells.
+Prints the llist using a format like \+: ~\newline
+ \{\{ ~\newline
+ \char`\"{}prints the lcells\char`\"{} ~\newline
+ \}\}. 
 
 
 \begin{DoxyParams}{Parameters}
