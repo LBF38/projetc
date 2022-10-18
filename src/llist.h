@@ -3,14 +3,16 @@
  * @author Mathis URIEN (LBF38)
  * @version 1.0.0
  * @date 2022-10-19
- *
+ * @brief Defines the llist.c functions and structures.
  * @copyright Copyright (c) 2022
  *
  */
 #include "list.h"
 
 /**
- * @brief
+ * @brief Defines the llist structure
+ * 
+ * The llist points to the first lcell named head.
  *
  */
 struct llist
@@ -19,7 +21,12 @@ struct llist
 };
 
 /**
- * @brief
+ * @brief Defines the lcell structure
+ * 
+ * The lcell has 3 values :
+ * - index : it is the letter for referencing the last names
+ * - index_list : it contains the names corresponding to the index letter
+ * - next : it points to the next cell or is NULL if it is the last lcell of the llist.
  *
  */
 struct lcell
@@ -36,33 +43,29 @@ struct lcell
  */
 struct llist *new_llist();
 
-/* Free the input llist and its lcells */
 /**
- * @brief 
+ * @brief Free the input llist and its lcells
  * 
  * @param llst 
  */
 void free_llist(struct llist *llst);
 
-/* Print a lcell as [fname,lname,zip] */
 /**
- * @brief 
+ * @brief Print a lcell as [fname,lname,zip]
  * 
  * @param lcell 
  */
 void print_lcell(struct lcell *lcell);
 
-/* Print a llist and its lcells */
 /**
- * @brief 
+ * @brief Print a llist and its lcells 
  * 
  * @param llst 
  */
 void print_llist(struct llist *llst);
 
-/* Make a lcell from given values */
 /**
- * @brief 
+ * @brief Make a lcell from given values
  * 
  * @param index_list 
  * @param c 

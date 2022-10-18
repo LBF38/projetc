@@ -2,6 +2,15 @@
 \label{structlcell}\index{lcell@{lcell}}
 
 
+Defines the lcell structure.  
+
+
+
+
+{\ttfamily \#include $<$llist.\+h$>$}
+
+
+
 Collaboration diagram for lcell\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -22,6 +31,16 @@ struct \mbox{\hyperlink{structlist}{list}} $\ast$ {\bfseries index\+\_\+list}
 struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$ {\bfseries next}
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Defines the lcell structure. 
+
+The lcell has 3 values \+:
+\begin{DoxyItemize}
+\item index \+: it is the letter for referencing the last names
+\item index\+\_\+list \+: it contains the names corresponding to the index letter
+\item next \+: it points to the next cell or is N\+U\+LL if it is the last lcell of the llist. 
+\end{DoxyItemize}
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

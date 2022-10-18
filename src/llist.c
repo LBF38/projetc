@@ -60,7 +60,7 @@ static void free_lcells(struct llist *llst)
 }
 
 /**
- * @brief free_llist frees the llist by calling free_lcells and then frees the llist pointer.
+ * @brief Frees the llist by calling free_lcells and then frees the llist pointer.
  *
  * @param llst
  */
@@ -83,7 +83,7 @@ void free_llist(struct llist *llst)
  *              [Firstname,Aname,1234], \n
  *          } \n
  *        ,B] \n
- *        Therefore, it shows the content of the current index letter, the index_list and the next index letter.
+ * Therefore, it shows the content of the current index letter, the index_list and the next index letter.
  *
  * @param lcell
  */
@@ -129,7 +129,9 @@ void print_llist(struct llist *llst)
 ============= */
 
 /**
- * @brief make_lcell creates a lcell by using the first character of the c->lname
+ * @brief Creates a lcell
+ * 
+ * It uses the first character of the c->lname
  *        and inserts the cellule `c` into the index_list
  *        It also allocates the memory for the lcellule and its core components. (index, index_list)
  *

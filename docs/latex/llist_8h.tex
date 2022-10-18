@@ -1,5 +1,10 @@
 \hypertarget{llist_8h}{}\doxysection{src/llist.h File Reference}
 \label{llist_8h}\index{src/llist.h@{src/llist.h}}
+
+
+Defines the \mbox{\hyperlink{llist_8c}{llist.\+c}} functions and structures.  
+
+
 {\ttfamily \#include \char`\"{}list.\+h\char`\"{}}\newline
 Include dependency graph for llist.\+h\+:\nopagebreak
 \begin{figure}[H]
@@ -8,8 +13,7 @@ Include dependency graph for llist.\+h\+:\nopagebreak
 \includegraphics[width=342pt]{llist_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:
-\nopagebreak
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,26 +24,22 @@ This graph shows which files directly or indirectly include this file\+:
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}}
-\item 
+\begin{DoxyCompactList}\small\item\em Defines the llist structure. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Defines the lcell structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
 struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_ac3312899610c4946aa78c6e99af92b23}{new\+\_\+llist}} ()
 \begin{DoxyCompactList}\small\item\em Allocate memory for a llist structure and return the pointer. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a4d4fa25c2d14a70d9f31eef16cc819c2}{free\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\begin{DoxyCompactList}\small\item\em free\+\_\+llist frees the llist by calling free\+\_\+lcells and then frees the llist pointer. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Free the input llist and its lcells. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a96127e0a9c39f8d657dde212214cf88f}{print\+\_\+lcell}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$\mbox{\hyperlink{structlcell}{lcell}})
-\begin{DoxyCompactList}\small\item\em Prints the lcell content using a list format \+: ~\newline
-. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Print a lcell as \mbox{[}fname,lname,zip\mbox{]}. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a7f46cc6c338760115d1096566310fbd2}{print\+\_\+llist}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst)
-\begin{DoxyCompactList}\small\item\em Prints the llist using a format like \+: ~\newline
- \{\{ ~\newline
- \char`\"{}prints the lcells\char`\"{} ~\newline
- \}\}. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Print a llist and its lcells. \end{DoxyCompactList}\item 
 struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$ \mbox{\hyperlink{llist_8h_a9b1ec25598a2a26e6fdbdf25d61e9627}{make\+\_\+lcell}} (struct \mbox{\hyperlink{structlist}{list}} $\ast$index\+\_\+list, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
-\begin{DoxyCompactList}\small\item\em make\+\_\+lcell creates a lcell by using the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list) \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Make a lcell from given values. \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{llist_8h_a64261cf1996904870fbbbe55043465ca}{compare\+\_\+lcells}} (struct \mbox{\hyperlink{structlcell}{lcell}} $\ast$lcellule, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
 \begin{DoxyCompactList}\small\item\em Compare cells to the index to insert it to the right place. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{llist_8h_a3f8aca215d77a4be6f43852ced804dda}{insert\+\_\+optimized}} (struct \mbox{\hyperlink{structllist}{llist}} $\ast$llst, struct \mbox{\hyperlink{structcell}{cell}} $\ast$c)
@@ -49,6 +49,8 @@ struct \mbox{\hyperlink{structllist}{llist}} $\ast$ \mbox{\hyperlink{llist_8h_ae
 
 
 \doxysubsection{Detailed Description}
+Defines the \mbox{\hyperlink{llist_8c}{llist.\+c}} functions and structures. 
+
 \begin{DoxyAuthor}{Author}
 Mathis U\+R\+I\+EN (L\+B\+F38) 
 \end{DoxyAuthor}
@@ -56,7 +58,7 @@ Mathis U\+R\+I\+EN (L\+B\+F38)
 1.\+0.\+0 
 \end{DoxyVersion}
 \begin{DoxyDate}{Date}
-2022-\/10-\/19
+2022-\/10-\/19 
 \end{DoxyDate}
 \begin{DoxyCopyright}{Copyright}
 Copyright (c) 2022 
@@ -104,7 +106,14 @@ int
 
 
 
-free\+\_\+llist frees the llist by calling free\+\_\+lcells and then frees the llist pointer. 
+Free the input llist and its lcells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em llst} & \\
+\hline
+\end{DoxyParams}
+Free the input llist and its lcells.
 
 
 \begin{DoxyParams}{Parameters}
@@ -181,7 +190,21 @@ struct llist$\ast$
 
 
 
-make\+\_\+lcell creates a lcell by using the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list) 
+Make a lcell from given values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index\+\_\+list} & \\
+\hline
+{\em c} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct lcell$\ast$
+\end{DoxyReturn}
+Make a lcell from given values.
+
+It uses the first character of the c-\/$>$lname and inserts the cellule {\ttfamily c} into the index\+\_\+list It also allocates the memory for the lcellule and its core components. (index, index\+\_\+list)
 
 
 \begin{DoxyParams}{Parameters}
@@ -219,21 +242,22 @@ struct llist$\ast$
 
 
 
-Prints the lcell content using a list format \+: ~\newline
-. 
+Print a lcell as \mbox{[}fname,lname,zip\mbox{]}. 
 
 
 \begin{DoxyParams}{Parameters}
 {\em lcell} & \\
 \hline
 \end{DoxyParams}
+Print a lcell as \mbox{[}fname,lname,zip\mbox{]}.
+
 Example of printing \+: ~\newline
  \mbox{[}A, ~\newline
  \{ ~\newline
  \mbox{[}Firstname,Aname,1234\mbox{]}, ~\newline
  \} ~\newline
  ,B\mbox{]} ~\newline
- Therefore, it shows the content of the current index letter, the index\+\_\+list and the next index letter.
+Therefore, it shows the content of the current index letter, the index\+\_\+list and the next index letter.
 
 
 \begin{DoxyParams}{Parameters}
@@ -248,10 +272,14 @@ Example of printing \+: ~\newline
 
 
 
-Prints the llist using a format like \+: ~\newline
- \{\{ ~\newline
- \char`\"{}prints the lcells\char`\"{} ~\newline
- \}\}. 
+Print a llist and its lcells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em llst} & \\
+\hline
+\end{DoxyParams}
+Print a llist and its lcells.
 
 
 \begin{DoxyParams}{Parameters}

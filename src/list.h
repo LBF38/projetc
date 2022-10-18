@@ -3,7 +3,7 @@
  * @author Mathis URIEN (LBF38)
  * @version 1.0.0
  * @date 2022-10-19
- * 
+ * @brief Defines the list.c functions and structures.
  * @copyright Copyright (c) 2022
  * 
  */
@@ -16,7 +16,9 @@
 #define ZIP_LENGTH 10
 
 /**
- * @brief 
+ * @brief Defines the list structure
+ * 
+ * It points to the first cell named head.
  * 
  */
 struct list {
@@ -24,7 +26,13 @@ struct list {
 };
 
 /**
- * @brief 
+ * @brief Defines the cell structure
+ * 
+ * The cell structure contains :
+ * - fname : first name
+ * - lname : last name
+ * - zip : zip code for the city
+ * - next : points to the next cell of the list
  * 
  */
 struct cell {
@@ -34,41 +42,38 @@ struct cell {
     struct cell* next;
 };
 
-/* Allocate memory for a list structure and return the pointer */
 /**
- * @brief 
+ * @brief Creates and allocates memory for a new list structure and return the pointer
+ * 
+ * Initialize head to NULL.
  * 
  * @return struct list* 
  */
 struct list* new_list();
 
-/* Free the input list and its cells */
 /**
- * @brief 
+ * @brief Free the input list and its cells
  * 
  * @param lst 
  */
 void free_list(struct list* lst);
 
-/* Print a cell as [fname,lname,zip] */
 /**
- * @brief 
+ * @brief Print a cell as [fname,lname,zip]
  * 
  * @param c 
  */
 void print_cell(struct cell* c);
 
-/* Print a list and its cells */
 /**
- * @brief 
+ * @brief Print a list and its cells
  * 
  * @param lst 
  */
 void print_list(struct list *lst);
 
-/* Make a cell from given values */
 /**
- * @brief 
+ * @brief Make a cell from given values
  * 
  * @param fname 
  * @param lname 
@@ -77,36 +82,40 @@ void print_list(struct list *lst);
  */
 struct cell* make_cell(char* fname, char* lname, char* zip);
 
-/* Make a cell from an input text line */
 /**
- * @brief 
+ * @brief Make a cell from an input text line
  * 
  * @param line 
  * @return struct cell* 
  */
 struct cell* make_cell_from_line(char* line);
 
-/* Push a cell on top */
 /**
- * @brief 
+ * @brief Push a cell on top
  * 
  * @param lst 
  * @param c 
  */
 void push(struct list *lst, struct cell* c);
 
-/* Pop the head of the list in the given out pointer */
 /**
- * @brief 
+ * @brief Pop the head of the list in the given out pointer
  * 
  * @param lst 
  * @param out 
  */
 void pop(struct list* lst, struct cell* out);
 
-/* Compare two cells, outputs 0 if equal, a negative number if a<b and positive otherwise */
 /**
- * @brief 
+ * @brief Compare two cells
+ * 
+ * Outputs :
+ * - -1  if a < b,
+ * -  0  if equal, 
+ * -  1  if a > b.
+ * 
+ * It firstly compares the last names of each cell
+ * and then, if they are equal, it compares the first names.
  * 
  * @param a 
  * @param b 
@@ -114,18 +123,16 @@ void pop(struct list* lst, struct cell* out);
  */
 int compare_cells(struct cell* a, struct cell* b);
 
-/* Add the cell to the list respecting alphabetical order of names/lnames */
 /**
- * @brief 
+ * @brief Add the cell to the list respecting alphabetical order of names/lnames
  * 
  * @param lst 
  * @param c 
  */
 void insert(struct list* lst, struct cell* c);
 
-/* Load the contents of a file in a sorted list */
 /**
- * @brief 
+ * @brief Load the contents of a file in a sorted list
  * 
  * @param file_name 
  * @return struct list* 

@@ -1,6 +1,6 @@
 <map id="llist" name="llist">
-<area shape="rect" id="node1" title=" " alt="" coords="7,273,53,300"/>
-<area shape="rect" id="node2" href="$structlcell.html" title=" " alt="" coords="5,184,55,211"/>
-<area shape="rect" id="node3" href="$structlist.html" title=" " alt="" coords="9,95,51,121"/>
-<area shape="rect" id="node4" href="$structcell.html" title=" " alt="" coords="7,5,53,32"/>
+<area shape="rect" id="node1" title="Defines the llist structure." alt="" coords="7,273,53,300"/>
+<area shape="rect" id="node2" href="$structlcell.html" title="Defines the lcell structure." alt="" coords="5,184,55,211"/>
+<area shape="rect" id="node3" href="$structlist.html" title="Defines the list structure." alt="" coords="9,95,51,121"/>
+<area shape="rect" id="node4" href="$structcell.html" title="Defines the cell structure." alt="" coords="7,5,53,32"/>
 </map>

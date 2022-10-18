@@ -13,11 +13,6 @@
 /* Construction/Destruction
 ======================== */
 
-/**
- * @brief 
- * 
- * @return struct list* 
- */
 struct list *new_list()
 {
 	struct list *lst = (struct list *)malloc(sizeof(struct list));
@@ -32,7 +27,7 @@ struct list *new_list()
 }
 
 /**
- * @brief 
+ * @brief Frees memory occupied by each cells of the given list.
  * 
  * @param lst 
  */
@@ -59,7 +54,7 @@ static void free_cells(struct list *lst)
 }
 
 /**
- * @brief 
+ * @brief Frees the complete list and its pointer.
  * 
  * @param lst 
  */
@@ -73,7 +68,7 @@ void free_list(struct list *lst)
 ======== */
 
 /**
- * @brief 
+ * @brief Prints a cell as [fname,lname,zip]
  * 
  * @param c 
  */
@@ -83,7 +78,7 @@ void print_cell(struct cell *c)
 }
 
 /**
- * @brief 
+ * @brief Prints a list and its cells
  * 
  * @param lst 
  */
@@ -106,7 +101,7 @@ void print_list(struct list *lst)
 ============= */
 
 /**
- * @brief 
+ * @brief Makes a cell and allocates memory accordingly
  * 
  * @param fname 
  * @param lname 
@@ -125,7 +120,7 @@ struct cell *make_cell(char *fname, char *lname, char *zip)
 }
 
 /**
- * @brief 
+ * @brief Pushes a cell to the given list
  * 
  * @param lst 
  * @param c 
@@ -141,7 +136,10 @@ void push(struct list *lst, struct cell *c)
 }
 
 /**
- * @brief 
+ * @brief Pops a cell from the list
+ * 
+ * Pops the first cell of the list
+ * and stores it in the given `out` cell pointer.
  * 
  * @param lst 
  * @param out 
@@ -155,7 +153,23 @@ void pop(struct list *lst, struct cell *out)
 }
 
 /**
- * @brief 
+ * @brief Makes a cell from given line
+ * 
+ * Lines are formatted like that : first_name,last_name,zipcode;\\n \n
+ * So, we need to separate the string according to the separator ","
+ * and remove the last two characters, which is done by separating the string with ";".
+ * 
+ * @warning The string is a single memory space and each value of the cell (fname, lname and zip)
+ * points to a part of the string pointer.
+ * 
+ * strtok cuts the given string and replaces the first occurence encountered of the separator by a '\0' character
+ * to mark the end of the char.
+ * 
+ * Therefore, when we will want to free the cells value, we only need to free fname 
+ * because it points to the first character of the whole string.
+ * 
+ * We can imagine the values like a big box separated in four and where the first three are pointed by fname, lname and zip.
+ * The fourth one contains the two last characters we don't want (";\n" in our case).
  * 
  * @param line 
  * @return struct cell* 
@@ -176,7 +190,7 @@ struct cell *make_cell_from_line(char *line)
 }
 
 /**
- * @brief 
+ * @brief Loads the file using the first method. Returns a simple list.
  * 
  * @param file_name 
  * @return struct list* 
@@ -209,7 +223,9 @@ struct list *load_file(char *file_name)
 }
 
 /**
- * @brief 
+ * @brief Compares simple cells by last names and then by first names.
+ * 
+ * It firstly compares last names. If equal, it compares the first names.
  * 
  * @param a 
  * @param b 
@@ -227,7 +243,13 @@ int compare_cells(struct cell *a, struct cell *b)
 }
 
 /**
- * @brief 
+ * @brief Inserts a cell to the given list.
+ * 
+ * There are 4 cases :
+ * 1. the list is empty. We add the cell to the list.
+ * 2. the cell needs to go first. We add the cell to the top of the list.
+ * 3. the cell goes between two elements.
+ * 4. the cell goes at the bottom of the list.
  * 
  * @param lst 
  * @param c 
