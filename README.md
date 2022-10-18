@@ -30,7 +30,11 @@ Pour éviter de devoir traverser toutes les entrées en cas d'ajout d'une nouvel
 
 ## My C-lang project documentation
 
-### Introduction
+Link to the pdf documentation : [C-lang Project Documentation (PDF)](https://github.com/LBF38/projetc/blob/main/docs/latex/refman.pdf)
+
+Link to the HTML documentation : [C-lang Project Documentation (HTML)](https://github.com/LBF38/projetc/blob/main/docs/html/index.html)
+
+### Introduction for using the project
 
 The C project consists in loading data into a list using two methods.
 
