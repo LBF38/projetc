@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     {
         if (method1 || default_mode)
         {
-            printf("Méthode 1 :\n\n");
+            printf("Method 1 : simple list\n\n");
             printf("Start loading file using method 1\n");
             clock_t function_time;
             function_time = clock();
@@ -96,7 +96,7 @@ int main(int argc, char *argv[])
 
         if (method2 || default_mode)
         {
-            printf("\nMéthode 2 :\n\n");
+            printf("\nMethod 2 : optimized list with index\n\n");
             printf("Start loading file using method 2\n");
             clock_t function_time2;
             function_time2 = clock();
@@ -116,21 +116,3 @@ int main(int argc, char *argv[])
 
     return 0;
 }
-
-// /**
-//  * @mainpage My Personal Index Page
-//  * 
-//  * @section intro_sec Introduction
-//  * 
-//  * This is the introduction for my C-lang project.
-//  * Here is a table of content of the documentation : @tableofcontents
-//  * 
-//  * @section install_sec Installation
-//  * 
-//  * This is a section about how to install the project.
-//  * 
-//  * @subsection step1 Step 1: Downloading the code.
-//  * 
-//  * blabla...
-//  * 
-//  */
